@@ -2,6 +2,7 @@ const express = require("express")
 const path = require("path")
 const multer = require("multer")
 const app = express()
+const fs = require("fs");
 
 const { Sequelize, DataTypes } = require('sequelize');
 const { QueryTypes } = require('sequelize');
@@ -19,7 +20,6 @@ app.use(express.static(__dirname + '/public/'));
 	
 var storage = multer.diskStorage({
 	destination: function (req, file, cb) {
-
 		// Uploads is the Upload_folder_name
 		cb(null, "uploads")
 	},
@@ -50,10 +50,38 @@ var upload = multer({
 	
 		cb("Error: File upload only supports the "
 				+ "following filetypes - " + filetypes);
+		
 	}
 
 // mypic is the name of file attribute
-}).single("userDoc");	
+}).array("userDoc");	
+
+
+async function executeQuery(query) {
+	const results = await db.query(query, {
+		logging: console.log,
+		plain: false,
+		raw: true,
+		type: QueryTypes.SELECT
+	});
+  
+	//console.log(results);
+	console.log(JSON.stringify(results));
+	return results;
+  
+}
+
+app.get('/database', async function(req, res, next) {
+  
+	var query = "SELECT * FROM documentData";
+	var columnsObject;
+  
+	results = await executeQuery(query);
+	console.log(results);
+  
+	res.render('database', { results: JSON.stringify(results) });
+  
+  });
 
 app.get("/",function(req,res){
 	res.render("index");
@@ -85,33 +113,36 @@ app.post("/uploadProfilePicture",function (req, res, next) {
 	})
 })
 
-app.get('/database', async function(req, res, next) {
+app.get('/download', async function(req, res, next) {
   
-	var query = "SELECT * FROM documentData";
-	var columnsObject;
+	let directory_name = "uploads";
   
-	results = await executeQuery(query);
-	console.log(results);
-  
-	res.render('database', { results: JSON.stringify(results) });
-  
-  });
-  
-  async function executeQuery(query) {
-	const results = await db.query(query, {
-		logging: console.log,
-		plain: false,
-		raw: true,
-		type: QueryTypes.SELECT
-	});
-  
-	//console.log(results);
-	console.log(JSON.stringify(results));
-	return results;
-  
-  }
+	// Function to get current filenames
+	// in directory
+	let filenames = fs.readdirSync(directory_name);
+	var arr = [];
+	console.log("\nFilenames in directory:");
+	for( i = 0; i < filenames.length; ++i) {
+		console.log("File:", filenames[i]);
+		if(filenames[i] == ".DS_Store") {
+			continue;
+		}
+		arr.push(filenames[i])
+	}
 
-	
+	res.render('download', { fileArr: arr});
+});
+
+app.get("/uploads/:file", (req, res) => {
+	res.download(
+	  path.join(__dirname, "uploads/" + req.params.file),
+	  (err) => {
+		if (err) res.status(404).send("<h1>Not found: 404</h1>");
+	  }
+	);
+});
+  
+  
 // Take any port number of your choice which
 // is not taken by any other process
 app.listen(8080,function(error) {
