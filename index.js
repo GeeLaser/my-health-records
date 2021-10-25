@@ -29,7 +29,7 @@ var storage = multer.diskStorage({
 })
 	
 // Define the maximum size for uploading
-// picture i.e. 1 MB. it is optional
+// picture i.e. 10 MB. it is optional
 const maxSize = 1 * 1000 * 1000 * 10;
 	
 var upload = multer({
@@ -68,7 +68,6 @@ async function executeQuery(query) {
 	//console.log(results);
 	console.log(JSON.stringify(results));
 	return results;
-  
 }
 
 app.get('/database', async function(req, res, next) {
@@ -98,14 +97,12 @@ app.post("/uploadProfilePicture",function (req, res, next) {
 	upload(req,res,function(err) {
 
 		if(err) {
-
 			// ERROR occured (here it can be occured due
 			// to uploading image of size greater than
-			// 1MB or uploading different file type)
+			// 10MB or uploading different file type)
 			res.send(err);
 		}
 		else {
-
 			// SUCCESS, image successfully uploaded
 			res.status(200);
 			res.render('redirect');
@@ -130,17 +127,17 @@ app.get('/download', async function(req, res, next) {
 		arr.push(filenames[i])
 	}
 
-	res.render('download', { fileArr: arr});
+	res.render('download', { fileArr: arr });
 });
 
-app.get("/uploads/:file", (req, res) => {
+/*app.get("/uploads/:file", (req, res) => {
 	res.download(
 	  path.join(__dirname, "uploads/" + req.params.file),
 	  (err) => {
 		if (err) res.status(404).send("<h1>Not found: 404</h1>");
 	  }
 	);
-});
+});*/
   
   
 // Take any port number of your choice which

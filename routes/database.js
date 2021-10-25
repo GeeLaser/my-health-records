@@ -1,4 +1,4 @@
-var Sequelize = require('sequelize');
+/*var Sequelize = require('sequelize');
 const { QueryTypes } = require('sequelize');
 
 var sequelize = new Sequelize('myHealthRecords', 'hhm14', 'Remember1!', { 
@@ -26,4 +26,4 @@ async function testConnection() {
 
 testConnection();
 
-module.exports = sequelize;
+module.exports = sequelize;*/
