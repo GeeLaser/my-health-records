@@ -1,1 +1,24 @@
+app.get("/")
+- a class that gets the landing page for the site
+
+app.get('/database')
+- a class that gets the database page for the site 
+- currently not needed (first sprint)
+- during implementation of ehrBase this class will be needed 
+
+app.get("/redirect")
+- a class that gets the redirect page after a user uploads a document 
+
+app.post("/uploadFile")
+- a class that gets called when the user uploads one or more files
+
+app.get('/download')
+- a class that gets the download page and allows users to download thier files
+
+app.get("/uploads/:file")
+- a class that uploads files submitted by the users to the uploads folder
+
+critical functions assinged to variables:
+- var upload holds the parameters and functions from multer that acts as the middle ware allowing users to upload files
+- var storage holds the parameters needed by var upload to know where to deliver files 
 
