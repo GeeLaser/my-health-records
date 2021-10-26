@@ -13,7 +13,7 @@
 
     <link rel='stylesheet' href='stylesheets/style.css' />
 
-    <title>Download a file</title>
+    <title>Send a File</title>
     <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">My Health Records</a>
@@ -26,32 +26,20 @@
                         <a class="nav-link"  href="/">Upload files</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active"  aria-current="page" href="/download">Download files</a>
+                        <a class="nav-link"  href="/download">Download files</a>
                     </li>
                     <li class = "nav-item"> 
-                        <a class = "nav-link" href="/email">Send files</a>
+                        <a class = "nav-link active" aria-current = "page" href="/email">Send files</a>
                     </li>
             </div>
         </div>
     </nav>
 </head>
 
-  
 <body>
     <div class = "undernavbar">
         <h1>
-            Download your files:  
+            Send your files:  
         </h1>
-        <ul>
-            <% fileArr.forEach((file) => { %>
-            <li>
-                <a href = "/uploads/<%= file %>">
-                    <%= file %>
-                </a>
-            </li>
-            <% }) %>
-        </ul>
-    </div>
+        
 </body>
-
-</html>
