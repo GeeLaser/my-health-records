@@ -130,6 +130,11 @@ app.get('/download', async function(req, res, next) {
 	res.render('download', { fileArr: arr });
 });
 
+app.get('/email', async function(req, res)
+{
+	res.render('email');
+});
+
 /*app.get("/uploads/:file", (req, res) => {
 	res.download(
 	  path.join(__dirname, "uploads/" + req.params.file),
