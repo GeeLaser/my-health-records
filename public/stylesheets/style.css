@@ -1,3 +1,8 @@
 .undernavbar {
     padding: 1%
 }
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+  }

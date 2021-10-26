@@ -130,10 +130,33 @@ app.get('/download', async function(req, res, next) {
 	res.render('download', { fileArr: arr });
 });
 
-app.get('/email', async function(req, res)
+app.get('/email', async function(req, res, next)
 {
-	res.render('email');
+	let directory_name = "uploads";
+  
+	// Function to get current filenames
+	// in directory
+	let filenames = fs.readdirSync(directory_name);
+	var arr = [];
+	console.log("\nFilenames in directory:");
+	for( i = 0; i < filenames.length; ++i) {
+		console.log("File:", filenames[i]);
+		if(filenames[i] == ".DS_Store") {
+			continue;
+		}
+		arr.push(filenames[i])
+	}
+
+	res.render('email', {fileArr: arr});
 });
+
+app.get("/redirectEmail",function(req,res){
+	res.render("redirectEmail");
+})
+
+/*app.post("/sendFile",function (req, res, next) {
+		emailing function
+})*/
 
 app.get("/uploads/:file", (req, res) => {
 	res.download(
