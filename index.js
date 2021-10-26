@@ -135,14 +135,14 @@ app.get('/email', async function(req, res)
 	res.render('email');
 });
 
-/*app.get("/uploads/:file", (req, res) => {
+app.get("/uploads/:file", (req, res) => {
 	res.download(
 	  path.join(__dirname, "uploads/" + req.params.file),
 	  (err) => {
 		if (err) res.status(404).send("<h1>Not found: 404</h1>");
 	  }
 	);
-});*/
+});
   
   
 // Take any port number of your choice which
