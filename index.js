@@ -90,7 +90,7 @@ app.get("/redirect",function(req,res){
 	res.render("redirect");
 })
 	
-app.post("/uploadProfilePicture",function (req, res, next) {
+app.post("/uploadFile",function (req, res, next) {
 		
 	// Error MiddleWare for multer file upload, so if any
 	// error occurs, the image would not be uploaded!
