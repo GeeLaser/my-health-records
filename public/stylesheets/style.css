@@ -2,7 +2,16 @@
     padding: 1%
 }
 
-.wrapper {
-    display: flex;
-    flex-direction: column;
-  }
+.DataForm-label {
+    display: inline-block;
+    font-size: small;
+    margin-left: 5px;
+    width: 5%;
+    min-width: 60px;
+}
+.DataForm-input {
+    margin-right: 9px;
+    display: inline-block;
+    width: 21%;
+    min-width: 30px;
+}
