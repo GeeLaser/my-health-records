@@ -3,11 +3,22 @@ const path = require("path")
 const multer = require("multer")
 const app = express()
 const fs = require("fs");
+const nodemailer = require("nodemailer")
 
 const { Sequelize, DataTypes } = require('sequelize');
 const { QueryTypes } = require('sequelize');
 
 var db = require('./routes/database');
+
+var userEmail = 'testusersd4353@gmail.com'
+
+var transport = nodemailer.createTransport({
+	service: 'gmail',
+	auth: {
+		user: userEmail,
+		pass: "Remember1!"
+	}
+});
 	
 // View Engine Setup
 app.set("views",'./views')
@@ -130,8 +141,9 @@ app.get('/download', async function(req, res, next) {
 	res.render('download', { fileArr: arr });
 });
 
-app.get('/email', async function(req, res, next)
+app.get('/email', async function(req, res)
 {
+	
 	let directory_name = "uploads";
   
 	// Function to get current filenames
@@ -147,16 +159,8 @@ app.get('/email', async function(req, res, next)
 		arr.push(filenames[i])
 	}
 
-	res.render('email', {fileArr: arr});
+	res.render('email', { fileArr: arr });
 });
-
-app.get("/redirectEmail",function(req,res){
-	res.render("redirectEmail");
-})
-
-/*app.post("/sendFile",function (req, res, next) {
-		emailing function
-})*/
 
 app.get("/uploads/:file", (req, res) => {
 	res.download(
@@ -167,7 +171,33 @@ app.get("/uploads/:file", (req, res) => {
 	);
 });
   
-  
+
+app.get("/sendEmail/:file/:name", (req, res) => {
+	
+	var message = {
+		from: userEmail,
+		to: "henryhmadsen@gmail.com",
+		subject: "Test message",
+		text: "this is just a test email using nodemailer with an attachment",
+		attachments: [
+			{
+				path: path.join(__dirname, "uploads/" + req.params.file)
+			}
+		]
+	};
+
+	transport.sendMail(message, function(err) {
+		if(err) {
+			console.log("there was an error", err);
+			res.send("there was an error sending your message ")
+			return;
+		}
+		console.log("email sent");
+		res.send("message was sent")
+	});
+
+	
+});
 // Take any port number of your choice which
 // is not taken by any other process
 app.listen(8080,function(error) {
