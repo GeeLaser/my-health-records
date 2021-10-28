@@ -36,29 +36,28 @@
     </nav>
 </head>
 
-<script>
-    var dest = document.getElementById(dest);
-</script>
 <body>
     <div class = "undernavbar">
         <h1>
             Share your files:  
         </h1>
-        <ul>
-            <% fileArr.forEach((file) => { %>
-            <li>
-                <a href = "/sendEmail/<%= file %>">
-                    <%= file %>
-                </a>
-            </li>
-            <% }) %>
-        </ul>
+        <form action="/sendEmail" method="POST">
+            <span>To: </span> <br>
+            <input type="text" id="to" name="to"><br><br>
+            <span>Subject: </span> <br>
+            <input type="text" id="subject" name="subject"><br><br>
 
-        <label for="emailadd">Enter recipient email: </label>
-        <input type="text" id="emailadd" name="emailadd"><br><br>
-
-        <form action="/sendFile" enctype="multipart/form-data" method="POST">
-        <input type="submit" value="Submit">
+            <span > Body: </span> <br>
+            <textarea name="body" cols="40" rows="5"></textarea> <br><br>
+            <Span>Select one file to send: </Span> <br>
+            <ul>
+                <% fileArr.forEach((file) => { %>
+                    <li>
+                        <%=file%> <input type="radio" name="radioFile" value=" <%=file%>"><br>
+                    </li>
+                <% }) %>
+            </ul>
+            <input type="submit" value="Submit" >
         </form>
 
     </div>

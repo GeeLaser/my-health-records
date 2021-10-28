@@ -4,6 +4,7 @@ const multer = require("multer")
 const app = express()
 const fs = require("fs");
 const nodemailer = require("nodemailer")
+const bodyParser = require('body-parser');
 
 const { Sequelize, DataTypes } = require('sequelize');
 const { QueryTypes } = require('sequelize');
@@ -25,6 +26,7 @@ app.set("views",'./views')
 app.set("view engine","ejs")
 
 app.use(express.static(__dirname + '/public/'));
+app.use(bodyParser.urlencoded({ extended: true })); 
 	
 // var upload = multer({ dest: "Upload_folder_name" })
 // If you do not want to use diskStorage then uncomment it
@@ -172,16 +174,17 @@ app.get("/uploads/:file", (req, res) => {
 });
   
 
-app.get("/sendEmail/:file", (req, res) => {
+app.post("/sendEmail", (req, res) => {
+	var pathstring = req.body.radioFile;
 	
 	var message = {
 		from: userEmail,
-		to: "allenlu9326@gmail.com",
-		subject: "Test message",
-		text: "this is just a test email using nodemailer with an attachment",
+		to: req.body.to,
+		subject: req.body.subject,
+		text: req.body.body,
 		attachments: [
 			{
-				path: path.join(__dirname, "uploads/" + req.params.file)
+				path: path.join(__dirname, "uploads/" + pathstring.trim())
 			}
 		]
 	};
@@ -195,8 +198,6 @@ app.get("/sendEmail/:file", (req, res) => {
 		console.log("email sent");
 		res.send("message was sent")
 	});
-
-	
 });
 
 app.post("/sendFile",function (req, res, next) {
