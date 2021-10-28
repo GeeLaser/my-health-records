@@ -43,21 +43,21 @@
         </h1>
         <form action="/sendEmail" method="POST">
             <span>To: </span> <br>
-            <input type="text" id="to" name="to"><br><br>
+            <input type="text" id="to" name="to" required><br><br>
             <span>Subject: </span> <br>
-            <input type="text" id="subject" name="subject"><br><br>
+            <input type="text" id="subject" name="subject" required><br><br>
 
             <span > Body: </span> <br>
-            <textarea name="body" cols="40" rows="5"></textarea> <br><br>
+            <textarea name="body" cols="40" rows="5" required></textarea> <br><br>
             <Span>Select one file to send: </Span> <br>
             <ul>
                 <% fileArr.forEach((file) => { %>
                     <li>
-                        <%=file%> <input type="radio" name="radioFile" value=" <%=file%>"><br>
+                        <%=file%> <input type="radio" name="radioFile" value="<%=file%>" required><br>
                     </li>
                 <% }) %>
             </ul>
-            <input type="submit" value="Submit" >
+            <input type="submit" value="Send email" >
         </form>
 
     </div>

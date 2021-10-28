@@ -176,7 +176,7 @@ app.get("/uploads/:file", (req, res) => {
 
 app.post("/sendEmail", (req, res) => {
 	var pathstring = req.body.radioFile;
-	
+	console.log(req.body);
 	var message = {
 		from: userEmail,
 		to: req.body.to,
