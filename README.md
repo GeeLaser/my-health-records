@@ -19,7 +19,7 @@ During sprint one Allen and I decided implementig upload, download, and share fe
 
 USAGE: 
 1. Download or clone repo
-2. Install node js v14.17.4
+2. Install node js v14.17.4 (you can use homebrew if on mac or download from the web)
 3. Navigate to top level directory in your favorite IDE or your file system (go to the my-health-records directory)
 4. Open a terminal at the my-health-records directory, run "npm i" (you may have to download some packages manually although this should not happen. In this case run: "npm i ejs" "npm i express", "npm i filereader", "npm i multer", "npm i sequelize", and/or npm i [package] that is not download my npm i)
 5. Finally run the project by typing "node index.js" in the terminal from the my-health-records directory 
