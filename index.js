@@ -17,7 +17,7 @@ var transport = nodemailer.createTransport({
 	service: 'gmail',
 	auth: {
 		user: userEmail,
-		pass: "Remember1!"
+		pass: "xxxx"
 	}
 });
 	
