@@ -21,5 +21,4 @@ USAGE:
 2. Install node js v14.17.4
 3. Navigate to top level directory 
 4. In a terminal at the project file, run "npm i" (you may have to download some packages manually. In this case run: "npm i ejs" "npm i express", "npm i filereader", "npm i multer", "npm i sequelize".
-5. 
-6. Finally run the project by running "node index.js" in the terminal 
+5. Finally run the project by running "node index.js" in the terminal 
