@@ -1,6 +1,8 @@
 # my-health-records
 Team two - Allen Lu and Henry Madsen
 
+SEE BOTTOM FOR USAGE
+
 Project description: My Health Records seeks to empower individuals to take an active role in their health care, and provide technology and service to make that easy. The focus of the product is to host secure storage of a person’s records for that person’s use, as well as provide an easy to use application to facilitate viewing, sharing and updating health records.
 
 Sprint 1 log:
@@ -18,6 +20,8 @@ During sprint one Allen and I decided implementig upload, download, and share fe
 USAGE: 
 1. Download or clone repo
 2. Install node js v14.17.4
-3. Navigate to top level directory (my-health-records directory)
-4. In a terminal at the project file, run "npm i" (you may have to download some packages manually although this should not happen. In this case run: "npm i ejs" "npm i express", "npm i filereader", "npm i multer", "npm i sequelize", and/or npm i [package] that is not download my npm i)
+3. Navigate to top level directory in your favorite IDE or your file system (go to the my-health-records directory)
+4. Open a terminal at the my-health-records directory, run "npm i" (you may have to download some packages manually although this should not happen. In this case run: "npm i ejs" "npm i express", "npm i filereader", "npm i multer", "npm i sequelize", and/or npm i [package] that is not download my npm i)
 5. Finally run the project by typing "node index.js" in the terminal from the my-health-records directory 
+
+Please email henryhmadsen@gmail.com or allenlu9326@gmail.com with any questions or for a demo of the project. 
