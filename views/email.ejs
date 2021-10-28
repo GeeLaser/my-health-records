@@ -1,3 +1,4 @@
+<!--creates email page-->
 <!DOCTYPE html>
 <html>
 
@@ -35,11 +36,15 @@
         </div>
     </nav>
 </head>
-
+<!--This body is where we create and display the form where users enter the destination,
+subject, body, and attachment they wish to send. Similarly to downloads we create a 
+new list item for each file in the downloads folder and allow the user to select one 
+file to share. Ideally we would allow users to send multiple files and we are 
+planning to implement that feature next.  -->
 <body>
     <div class = "undernavbar">
         <h1>
-            Share your files:  
+            Share your health records:  
         </h1>
         <form action="/sendEmail" method="POST">
             <span>To: </span> <br>

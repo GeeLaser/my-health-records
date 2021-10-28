@@ -1,3 +1,4 @@
+<!--Displays landing/uploading page-->
 <!DOCTYPE html>
 <html>
   
@@ -38,10 +39,12 @@
     </nav>
     
 </head>
-  
+<!--Using a multipart/form-data form and a post method we allow the user to 
+upload a file by accessing thier machine's file system to select the file(s)
+to upload and upload them with the upload button which calls our multer functions -->
 <body>
     <div class = "undernavbar"> 
-        <h1>Select Health Records to upload</h1>
+        <h1>Select your health records to upload:</h1>
     
         <form action="/uploadFile" 
         enctype="multipart/form-data" method="POST">
