@@ -102,6 +102,10 @@ app.get("/",function(req,res){
 app.get("/redirect",function(req,res){
 	res.render("redirect");
 })
+
+app.get("/redirectEmail",function(req,res){
+	res.render("redirectEmail");
+})
 	
 app.post("/uploadFile",function (req, res, next) {
 		
@@ -196,7 +200,7 @@ app.post("/sendEmail", (req, res) => {
 			return;
 		}
 		console.log("email sent");
-		res.send("message was sent")
+		res.render("redirectEmail")
 	});
 });
 
