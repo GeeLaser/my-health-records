@@ -16,9 +16,8 @@ During sprint one Allen and I decided implementig upload, download, and share fe
   - One of the biggest issues with managing one's health records is sharing them with those who need them. With our built in email api the user can simply navigate     to the 'send files' tab and fill in the form to any one of their health records to a medical professional or anyone else who might need it. We use nodemailer to     allow the user to share files without having to log into thier email address by sending the email from a email tied to the server (it is called                     testusersd4353@gmail.com, in the future we would like to move away from gmail and create our own STMP email server) to avoid burdening the user with                 connectingour app to their mailing accounts and to ensure the security of their email credentials. Moving forward, we want to enable captcha and other security     measures to avoid abuse on this system as well as allow users to send multiple files at once.
 
 USAGE: 
-
 1. Download or clone repo
 2. Install node js v14.17.4
-3. Navigate to top level directory 
-4. In a terminal at the project file, run "npm i" (you may have to download some packages manually. In this case run: "npm i ejs" "npm i express", "npm i filereader", "npm i multer", "npm i sequelize".
-5. Finally run the project by running "node index.js" in the terminal 
+3. Navigate to top level directory (my-health-records directory)
+4. In a terminal at the project file, run "npm i" (you may have to download some packages manually although this should not happen. In this case run: "npm i ejs" "npm i express", "npm i filereader", "npm i multer", "npm i sequelize", and/or npm i [package] that is not download my npm i)
+5. Finally run the project by typing "node index.js" in the terminal from the my-health-records directory 
