@@ -17,7 +17,7 @@ var transport = nodemailer.createTransport({
 	service: 'gmail',
 	auth: {
 		user: userEmail,
-		pass: "Remember1!"
+		pass: "xxxx"
 	}
 });
 	
@@ -177,6 +177,9 @@ app.get("/uploads/:file", (req, res) => {
 	);
 });
   
+app.get("/redirectEmail",function(req,res){
+	res.render("redirectEmail");
+})
 
 app.post("/sendEmail", (req, res) => {
 	var pathstring = req.body.radioFile;
