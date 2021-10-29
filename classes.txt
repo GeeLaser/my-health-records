@@ -1,15 +1,1 @@
 
-# Classes
-
-### A list of potential classes we need to implement to create a minimal working version of this application
-
-- get_record
-  - This class generates and sends API calls to retrieve a record or records from the database
-- view_record
-  - This class handles rendering of the record retrieved
-- store_record
-  - This class generates and sends API calls to upload a record or records to the database
-- share_record
-  - This class sends a selected record via email to a specified email address
-- authenticate_user
-  - This class handles authentication of users
