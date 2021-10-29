@@ -17,9 +17,7 @@ var transport = nodemailer.createTransport({
 	service: 'gmail',
 	auth: {
 		user: userEmail,
-		pass: "Remember1!"	// note that this password would not be included in any  
-							// public release of this application  but since we are 
-							// in the classroom setting it is required
+		pass: "xxxx"	// get this password from the peer evaluation sheet we turned in 
 	}
 });
 	
