@@ -5,7 +5,7 @@ const fs = require("fs");
 
 
 var userEmail = 'testusersd4353@gmail.com'
-var pass = 'Remember1!'
+var pass = 'xxxx'
 
 var transport = nodemailer.createTransport({
 	service: 'gmail',

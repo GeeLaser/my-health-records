@@ -20,7 +20,6 @@ const emailRouter = require('./routes/email');
 app.use('/', indexRouter);
 app.use('/download', downloadRouter);
 app.use('/email', emailRouter);
-app.use('/upload', downloadRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
