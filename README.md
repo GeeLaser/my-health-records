@@ -3,6 +3,9 @@ Team two - Allen Lu and Henry Madsen
 
 SEE BOTTOM FOR USAGE
 
+IF YOU ARE GRADING THIS ASSIGNMENT AFTER NOV 16th PLEASE VISIT THIS BRANCH AS IT CONTAINS COMMITS UP UNTIL THE PROJECT DUE DATE:
+https://github.com/AllenLuGitHub/my-health-records/tree/0b59e668262ce07fff3afa908575c0039b7e7df5
+
 Project description: My Health Records seeks to empower individuals to take an active role in their health care, and provide technology and service to make that easy. The focus of the product is to host secure storage of a person’s records for that person’s use, as well as provide an easy to use application to facilitate viewing, sharing and updating health records.
 
 Sprint 1 log:
