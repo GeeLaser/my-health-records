@@ -19,43 +19,47 @@
     <title>Upload files</title>
     <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">My Health Records</a>
+            <a class="navbar-brand" href="/login">My Health Records</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active"  aria-current="page" href="/">Upload files</a>
+                        <a class="nav-link" href="/login">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/download">Download files</a>
-                    </li>
-                    <li class = "nav-item"> 
-                        <a class = "nav-link" href="/email">Send files</a>
+                        <a class="nav-link active" aria-current="page" href="/register">Register</a>
                     </li>
             </div>
         </div>
     </nav>
     
 </head>
-<!--Using a multipart/form-data form and a post method we allow the user to 
-upload a file by accessing thier machine's file system to select the file(s)
-to upload and upload them with the upload button which calls our multer functions-->
 <body>
-    <div class = "undernavbar"> 
-        <h1>Select your health records to upload:</h1>
-    
-        <form action="/uploadFile" 
-        enctype="multipart/form-data" method="POST">
-        
-            <span>Upload your file:</span>  
-            <input type="file" name="userDoc" required multiple/> <br>
-            <input type="submit" value="Upload"> 
+    <div class='undernavbar'> 
+        <h1>Register</h1>
+        <% if (name) { %>
+            <%= name %>
+          <% } %>
+        <form action="/register" method="POST">
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <input type="submit" value="Submit"></button>
+        </form>
+        <form action="/login" method="GET" style= "padding-top: 1%">
+            <input type="submit" value="Go to log in page">
         </form>
     </div>
+    
 </body>
-<form action="/logout?_method=DELETE" method="POST">
-    <button type="submit">Log Out</button>
-  </form>
-</html>
