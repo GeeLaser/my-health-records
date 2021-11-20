@@ -19,5 +19,6 @@
     border: 2px;
 }
 
-
-
+.nav-link {
+    color: white;
+}
