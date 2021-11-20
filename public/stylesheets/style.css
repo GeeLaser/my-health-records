@@ -19,6 +19,8 @@
     border: 2px;
 }
 
-.nav-link {
-    color: white;
+.under-textbox {
+    font-size: smaller;
+    opacity: 65%;
+    padding-bottom: .5%;
 }

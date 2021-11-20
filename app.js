@@ -88,12 +88,13 @@ app.post('/register', checkNotAuthenticated, async (req, res) => {
       email: req.body.email,
       password: hashedPassword
     })
-
+	var textBody = `Hi ${req.body.name}, we hope you enjoy using our application. \r\n\r\n -The MHR team`
+	console.log(textBody)
     var message = {
       from: userEmail,
       to: req.body.email,
-      subject: "Thanks for signing up!",
-      text: ":)",
+      subject: "Thanks for signing up for my health records!",
+      text: textBody ,
     };
 
     transport.sendMail(message, function(err) {
@@ -263,16 +264,21 @@ app.get('/email', checkAuthenticated, async function(req, res) {
 // post called once the user clicks the submit email button, creates new nodemialer email 
 // and sends it to the desired email address
 app.post("/sendEmail", checkAuthenticated, (req, res) => {
-  var pathstring = req.body.radioFile;
-  console.log(req.body);
+  var pathstring = req.body.checkedFile;
+  var dynamicAttachments = [];
+  for(i = 0; i < pathstring.length; ++i) {
+    pathstring[i] =  path.join("uploads/" + pathstring[i].trim())
+    dynamicAttachments.push({
+      path: pathstring[i]
+    })
+  }
+
   var message = {
     from: userEmail,
     to: req.body.to,
     subject: req.body.subject,
     text: req.body.body,
-    attachments: [{
-      path: path.join("uploads/" + pathstring.trim())
-    }]
+    attachments: dynamicAttachments
   };
 
   transport.sendMail(message, function(err) {
