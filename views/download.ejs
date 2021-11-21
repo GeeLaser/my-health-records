@@ -14,7 +14,7 @@
 
     <link rel='stylesheet' href='stylesheets/style.css' />
 
-    <title>Download a file</title>
+    <title>Manage files</title>
     <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">My Health Records</a>
@@ -65,8 +65,15 @@ index.js-->
         <ul>
             <% fileArr.forEach((file) => { %>
             <li>
+                <span><%= file %></span>
                 <a href = "/download/<%= file %>">
-                    <%= file %>
+                    Download
+                </a>
+                <a href="/view/<%= file %>">
+                    View
+                </a>
+                <a href="/delete/<%= file %>">
+                    Delete
                 </a>
             </li>
             <% }) %>

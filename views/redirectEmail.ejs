@@ -14,7 +14,7 @@
 
     <link rel='stylesheet' href='stylesheets/style.css' />
 
-    <title>redirect</title>    
+    <title>Email sent</title>    
     <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">My Health Records</a>
@@ -32,12 +32,13 @@
                     <li class = "nav-item"> 
                         <a class = "nav-link" href="/email">Send files</a>
                     </li>
-                    <li class = "nav-item" > 
-                        <a class = "nav-link">Signed in as : <%= name %></a>
-                    </li>
-                    <li class = "nav-item" > 
-                        <a class = "nav-link" href="/logout">Logout</a>
-                    </li>
+                </ul>
+                <span class="navbar-text" style="padding-right: 1%;">
+                    Signed in as : <%= name %>
+                  </span>
+                <form class="d-flex" action="/logout">
+                    <button class="btn btn-outline-light" type="submit" id="logout-button">Logout</button>
+                </form>
             </div>
         </div>
     </nav>

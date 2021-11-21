@@ -14,7 +14,12 @@ const multer = require("multer")
 const nodemailer = require("nodemailer")
 const fs = require("fs");
 
-const users = []
+var users = [{
+  id: 987461,
+  name: 'Mark Madsen',
+  email: 'q@q',
+  password: '$2b$10$lIx577zyK3aN6jO5qygXmuLarmnr63tr.PNNYCnahuGyQfuNZ/4YO'
+}];
 
 const initializePassport = require('./passport-config')
 initializePassport(
@@ -55,13 +60,11 @@ app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
 }))
 
 app.get('/register', checkNotAuthenticated, (req, res) => {
-  res.render('register.ejs', {
-    name: ''
-  })
+  res.render('register.ejs', {name: ''})
 })
 
 app.post('/register', checkNotAuthenticated, async (req, res) => {
-  var errorString = ''
+  var errorString = '';
   try {
     if (req.body.password != req.body.confirmPassword) {
       console.log("passwords didnt match")
@@ -78,6 +81,7 @@ app.post('/register', checkNotAuthenticated, async (req, res) => {
     for (i = 0; i < users.length; ++i) {
       if (uid == users[i].id) {
         uid = Math.floor(100000 + Math.random() * 900000)
+        i = 0
       }
     }
 
@@ -122,16 +126,14 @@ app.get('/logout', (req, res) => {
   res.redirect('/login')
 })
 
-app.delete('/logout', (req, res) => {
-  req.logOut()
-  res.redirect('/login')
-})
-
 function checkAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     return next()
   }
-  res.redirect('/login')
+  else {
+    res.redirect('/login')
+  }
+  
 }
 
 function checkNotAuthenticated(req, res, next) {
@@ -266,13 +268,14 @@ app.get('/email', checkAuthenticated, async function(req, res) {
 app.post("/sendEmail", checkAuthenticated, (req, res) => {
   var pathstring = req.body.checkedFile;
   var dynamicAttachments = [];
+
   for(i = 0; i < pathstring.length; ++i) {
     pathstring[i] =  path.join("uploads/" + pathstring[i].trim())
     dynamicAttachments.push({
       path: pathstring[i]
     })
   }
-
+console.log(dynamicAttachments)
   var message = {
     from: userEmail,
     to: req.body.to,
@@ -337,6 +340,14 @@ app.get("/download/:file", (req, res) => {
       if (err) res.status(404).send("<h1>Not found: 404</h1>");
     }
   );
+});
+
+app.get("/view/:file", (req, res) => {
+  res.render(path.join(__dirname, "uploads/" + req.params.file))
+});
+
+app.get("/delete/:file", (req, res) => {
+  
 });
 
 app.listen(8080, function(error) {
