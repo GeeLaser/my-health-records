@@ -49,17 +49,21 @@
 <!--Using a multipart/form-data form and a post method we allow the user to 
 upload a file by accessing thier machine's file system to select the file(s)
 to upload and upload them with the upload button which calls our multer functions-->
+<center>
 <body>
     <div class = "undernavbar"> 
         <h1>Select your health records to upload:</h1>
-    
+        <h6 class="under-h1"> 
+            Select one or more documents to upload by clicking the 
+            <b>'choose files'</b> button below
+        </h6>
         <form action="upload/uploadFile" 
         enctype="multipart/form-data" method="POST">
         
-            <span>Upload your file:</span>  
-            <input type="file" name="userDoc" required multiple/> <br>
+            <input type="file" name="userDoc" value="Upload your file:" required multiple/> <br>
             <input type="submit" value="Upload"> 
         </form>
     </div>
 </body>
+</center>
 </html>

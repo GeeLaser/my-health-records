@@ -50,18 +50,22 @@
 <!--Using a multipart/form-data form and a post method we allow the user to 
 upload a file by accessing thier machine's file system to select the file(s)
 to upload and upload them with the upload button which calls our multer functions-->
-<div class="undernavbar">
-    <form action="/manage" method="GET">            
-        Manage your health records: <input type="submit" value="Upload"> 
-    </form>
-    <br>
-    <form action="/upload" method="GET">            
-        Upload your health records: <input type="submit" value="Upload"> 
-    </form>
-    <br>
-    <form action="/email" method="GET">            
-        Share your health records: <input type="submit" value="Upload"> 
-    </form>
-</div>
-
+<center>
+<body>
+    <div class="undernavbar">
+        <h1 class=>Welcome <%= name %></h1>
+        <form action="/manage" method="GET">            
+            <input type="submit" value="Manage your health records"> 
+        </form>
+        <br>
+        <form action="/upload" method="GET">            
+            <input type="submit" value="Upload your health records"> 
+        </form>
+        <br>
+        <form action="/email" method="GET">            
+            <input type="submit" value="Share your health records"> 
+        </form>
+    </div>
+</body>
+</center>
 </html>

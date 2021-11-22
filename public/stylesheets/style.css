@@ -20,7 +20,104 @@
 }
 
 .under-textbox {
+    padding-bottom: 1%;
     font-size: smaller;
     opacity: 65%;
     padding-bottom: .5%;
+}
+.under-h1 {
+    padding-bottom: 1%;
+    
+    opacity: 80%;
+    padding-bottom: .5%;
+}
+
+.show-password {
+    padding-top: 1%;
+    opacity: 80%;
+}
+
+input {
+    width: 50%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+  }
+  
+  /* Style the submit button */
+  input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  /* Style the container for inputs */
+  .container {
+    background-color: #f1f1f1;
+    padding: 20px;
+  }
+  
+  /* The message box is shown when the user clicks on the password field */
+  #message {
+    width: 50%;
+    display:none;
+    background: #f1f1f1;
+    color: #000;
+    position: relative;
+    padding: 10px;
+    margin-top: 5px;
+  }
+  
+  #message div {
+    font-size: 18px;
+  }
+  
+  /* Add a green text color and a checkmark when the requirements are right */
+  .valid {
+    color: green;
+  }
+  
+  .valid:before {
+    position: relative;
+    left: -35px;
+    content: "✔";
+  }
+  
+  /* Add a red text color and an "x" when the requirements are wrong */
+  .invalid {
+    color: red;
+  }
+  
+  .invalid:before {
+    position: relative;
+    left: -35px;
+    content: "✖";
+  }
+
+  #showpass {
+      width: 1%;
+  }
+
+ .file-list {
+    width: 1%;
+}
+
+.text-box {
+    width: 50%;
+    border-color: #CCCCCC;
+    border-radius: 4px;
+}
+
+.button-style {
+    background-color: rebeccapurple;
+}
+
+.manage-list-block {
+    text-align: center;
+}
+.manage-list {
+    display: inline-block; 
+	text-align: left; 
 }

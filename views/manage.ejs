@@ -48,37 +48,40 @@
 for each file we create a new list item, a, and an unique href to the file in the downloads
 directory. When a user clicks the link the get is sent to the express app and processed in 
 index.js-->
+<center>
 <body>
     <div class = "undernavbar">
         <h1>
-            Manage your health records:
+            Manage your health records
         </h1>
-        
+        <h6 class="under-h1">
+            Click the action you wish to preform next to the corresponding file 
+        </h6>
         <% if(fileArr.length == 0) { %>
             <h4> No files have been uploaded</h4>
             <a href="/email"> Click here to upload your files</a>
         <% } %>
-        <% if(fileArr.length != 0) { %>
-            <h4>Click the link of the file you want to download </h4>
-        <% } %>
         
-        <ul>
-            <% fileArr.forEach((file) => { %>
-            <li>
-                <span><%= file %></span>
-                <a href = "/manage/<%= file %>">
-                    Download
-                </a>
-                <a href="/view/<%= file %>">
-                    View
-                </a>
-                <a href="/delete/<%= file %>">
-                    Delete
-                </a>
-            </li>
-            <% }) %>
-        </ul>
+        <div class="manage-list-block">
+            <ul class="manage-list">
+                <% fileArr.forEach((file) => { %>
+                <li>
+                    <span><%= file %></span>
+                    <a href = "/manage/<%= file %>">
+                        Download
+                    </a>
+                    <a href="/view/<%= file %>">
+                        View
+                    </a>
+                    <a href="/delete/<%= file %>">
+                        Delete
+                    </a>
+                </li>
+                <% }) %>
+            </ul>
+        </div>
+        
     </div>
 </body>
-
+</center>
 </html>

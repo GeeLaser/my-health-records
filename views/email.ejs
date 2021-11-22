@@ -48,11 +48,9 @@ subject, body, and attachment they wish to send. Similarly to downloads we creat
 new list item for each file in the downloads folder and allow the user to select one 
 file to share. Ideally we would allow users to send multiple files and we are 
 planning to implement that feature next.  -->
+<center>
 <body>
     <div class = "undernavbar">
-        <h1>
-            Send your health records:  
-        </h1>
             <% if(fileArr.length == 0) { %>
                 <h4> A file must be uploaded in order to send an email</h4>
                 <a href="/upload"> Click here to upload your files</a>
@@ -60,22 +58,21 @@ planning to implement that feature next.  -->
 
             <% if(fileArr.length != 0) { %>
                 <form action="/email/sendEmail" method="POST">
-                    <span>To: </span> <br>
-                    <input type="email" id="to" name="to" required><br><br>
-                    <span>Subject: </span> <br>
-                    <input type="text" id="subject" name="subject" required><br><br>
-        
-                    <span > Body: </span> <br>
-                    <textarea name="body" cols="40" rows="5" required></textarea> <br>
+                    <h1>Share your health records</h1>
+                    <h6 class="under-h1">Fill in the form with the information requested and select at least one file</h6>
+                    <input type="email" id="to" name="to" placeholder="Doctor's email address" required><br><br>
+                    <input type="text" id="subject" name="subject" placeholder="The subject of your email" required><br>
+                    <br>
+                    <textarea name="body" rows="5" class="text-box"required placeholder="  What would you like to say?"></textarea> <br>
 
-                <span>Select one file to send: </span>
-                <ul>
+                <h3>Choose one or more files to send: </h3>
+                <div class="file-container">
                     <% fileArr.forEach((file) => { %>
-                        <li>
-                            <%=file%> <input type="checkbox" name="checkedFile" value="<%=file%>"><br>
-                        </li>
+
+                            <%=file%> <input class="file-list" type="checkbox" name="checkedFile" value="<%=file%>"><br>
                     <% }) %>
-                </ul>
+                </div>
+                <br>
                 <input type="submit" value="Send email" >
             </form>
             <% } %>
@@ -83,3 +80,5 @@ planning to implement that feature next.  -->
             
     </div>
 </body>
+</center>
+</html>

@@ -17,7 +17,7 @@
 
 
     <title>Upload files</title>
-    <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+    <nav class="navbar sticky-top navbar-expand-xl navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="/login">My Health Records</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,6 +36,7 @@
     </nav>
     
 </head>
+<center>
 <body>
     <div class='undernavbar'> 
         <h1>Create an account</h1>
@@ -44,44 +45,126 @@
           <% } %>
         <form action="/register" method="POST">
           <div>
-            <label for="name">Name:</label>
             <input type="text" id="name" name="name" placeholder="Enter your name" required>
           </div>
-          <br>
           <div>
-            <label for="email" style="padding-right: 4px;">Email:</label>
             <input type="email" id="email" name="email" placeholder="Enter your email"required>
           </div>
-          <br>
+          
           <div>
-            <label for="password">Password: </label> 
             <input type="password" id="password" name="password"
             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required placeholder="Enter a password"> 
-
-            <label for="confirmPassword">Confirm password: </label>
+          </div>
+          <div>
             <input type="password" id="confirmPassword" name="confirmPassword"
             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required placeholder="Confirm your password">
           </div>
+          <span>Show password</span>
+          <input type="checkbox" onclick="showPass()" id="showpass" value="Show Password">
+          <br>
+          <script>
+              function showPass() {
+                  var ptype = document.getElementById("password");
+                  var cptype = document.getElementById("confirmPassword");
+                  if (ptype.type === "password" && cptype.type === "password") {
+                      ptype.type = "text";
+                      cptype.type = "text";
+                  } else {
+                      ptype.type = "password";
+                      cptype.type = "password";
+                  }
+              }
+          </script>
+            
+          
+          <div id="message">
+            <h3>Password must contain the following:</h3>
+            <div id="letter" class="invalid">A <b>lowercase</b> letter</div>
+            <div id="capital" class="invalid">A <b>capital (uppercase)</b> letter</div>
+            <div id="number" class="invalid">A <b>number</b></div>
+            <div id="length" class="invalid">Minimum <b>8 characters</b></div>
+            <div id="matching" class="invalid"><b>Passwords match </b></div>
 
-          <div>
-            <input type="checkbox" onclick="showPass()"> Show Password
-            <script>
-                function showPass() {
-                    var ptype = document.getElementById("password");
-                    var cptype = document.getElementById("confirmPassword");
-                    if (ptype.type === "password" && cptype.type === "password") {
-                        ptype.type = "text";
-                        cptype.type = "text";
-                    } else {
-                        ptype.type = "password";
-                        cptype.type = "password";
-                    }
-                }
-            </script>
           </div>
-          <div class="under-textbox">
-            Your password must contain 8 characters or more with at least one uppercase, one lower case, and one number 
-          </div>
+                  
+          <script>
+          var passwordInput = document.getElementById("password");
+          var confirmPasswordInput = document.getElementById("confirmPassword");
+          var letter = document.getElementById("letter");
+          var capital = document.getElementById("capital");
+          var number = document.getElementById("number");
+          var length = document.getElementById("length");
+          var matching = document.getElementById("matching");
+          
+          
+          
+          // When the user starts to type something inside the password field
+          function changeDisplay() {
+            // Validate lowercase letters
+            var lowerCaseLetters = /[a-z]/g;
+            if(passwordInput.value.match(lowerCaseLetters)) {  
+              letter.classList.remove("invalid");
+              letter.classList.add("valid");
+            } else {
+              letter.classList.remove("valid");
+              letter.classList.add("invalid");
+            }
+            
+            // Validate capital letters
+            var upperCaseLetters = /[A-Z]/g;
+            if(passwordInput.value.match(upperCaseLetters)) {  
+              capital.classList.remove("invalid");
+              capital.classList.add("valid");
+            } else {
+              capital.classList.remove("valid");
+              capital.classList.add("invalid");
+            }
+          
+            // Validate numbers
+            var numbers = /[0-9]/g;
+            if(passwordInput.value.match(numbers)) {  
+              number.classList.remove("invalid");
+              number.classList.add("valid");
+            } else {
+              number.classList.remove("valid");
+              number.classList.add("invalid");
+            }
+            
+            // Validate length
+            if(passwordInput.value.length >= 8) {
+              length.classList.remove("invalid");
+              length.classList.add("valid");
+            } else {
+              length.classList.remove("valid");
+              length.classList.add("invalid");
+            }
+            if(passwordInput.value == confirmPasswordInput.value && 
+              passwordInput.value !=0 && confirmPasswordInput.value != 0) {
+              
+              matching.classList.remove("invalid");
+              matching.classList.add("valid");
+            } else {
+              matching.classList.remove("valid");
+              matching.classList.add("invalid");
+            }            
+          }
+
+          function onElementFocus() {
+            document.getElementById("message").style.display = "block";
+          }
+
+          passwordInput.onkeyup = changeDisplay
+          confirmPasswordInput.onkeyup = changeDisplay
+
+          // When the user clicks on the password field, show the message box
+          passwordInput.onfocus = onElementFocus
+          confirmPasswordInput.onfocus = onElementFocus
+          
+          // When the user clicks outside of the password field, hide the message box
+          passwordInput.onblur = onElementBlur
+          confirmPasswordInput.onblur = onElementBlur
+
+          </script>
           <input type="submit" value="Submit"></button>
         </form>
         <form action="/login" method="GET" style= "padding-top: 1%">
@@ -90,3 +173,5 @@
     </div>
     
 </body>
+</center>
+</html>
