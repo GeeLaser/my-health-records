@@ -24,10 +24,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link"  href="/">Upload files</a>
+                        <a class="nav-link"  href="/manage">Manage files</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"  href="/download">Download files</a>
+                        <a class="nav-link"  href="/upload">Upload files</a>
                     </li>
                     <li class = "nav-item"> 
                         <a class = "nav-link active" aria-current = "page" href="/email">Send files</a>
@@ -53,18 +53,15 @@ planning to implement that feature next.  -->
         <h1>
             Send your health records:  
         </h1>
-
-        
-
             <% if(fileArr.length == 0) { %>
                 <h4> A file must be uploaded in order to send an email</h4>
-                <a href="/"> Click here to upload your files</a>
+                <a href="/upload"> Click here to upload your files</a>
             <% } %>
 
             <% if(fileArr.length != 0) { %>
-                <form action="/sendEmail" method="POST">
+                <form action="/email/sendEmail" method="POST">
                     <span>To: </span> <br>
-                    <input type="text" id="to" name="to" required><br><br>
+                    <input type="email" id="to" name="to" required><br><br>
                     <span>Subject: </span> <br>
                     <input type="text" id="subject" name="subject" required><br><br>
         
@@ -75,7 +72,7 @@ planning to implement that feature next.  -->
                 <ul>
                     <% fileArr.forEach((file) => { %>
                         <li>
-                            <%=file%> <input type="checkbox" name="checkedFile" value="<%=file%>" required><br>
+                            <%=file%> <input type="checkbox" name="checkedFile" value="<%=file%>"><br>
                         </li>
                     <% }) %>
                 </ul>

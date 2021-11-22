@@ -23,11 +23,12 @@
           </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    
                     <li class="nav-item">
-                        <a class="nav-link"  href="/">Upload files</a>
+                        <a class="nav-link" href="/manage">Manage files</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/download">Download files</a>
+                        <a class="nav-link"  href="/upload">Upload files</a>
                     </li>
                     <li class = "nav-item"> 
                         <a class = "nav-link" href="/email">Send files</a>
@@ -45,10 +46,18 @@
 </head>
   <!--displays a button to go back to email page-->
 <body>
-    <div class = "undernavbar">
+    <div style="padding: 1%;">
         <h1>Your email was sent successfully</h1>
-        <form action="/email"> 
-            <input type="submit" value="Send another file"> 
+        <form action="/manage" method="GET">            
+            Manage your health records: <input type="submit" value="Manage"> 
+        </form>
+        <br>
+        <form action="/upload" method="GET">            
+            Upload your health records: <input type="submit" value="Upload"> 
+        </form>
+        <br>
+        <form action="/email" method="GET">            
+            Share your health records: <input type="submit" value="Share"> 
         </form>
     </div>
 </body>
