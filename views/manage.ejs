@@ -57,9 +57,10 @@ index.js-->
         <h6 class="under-h1">
             Click the action you wish to preform next to the corresponding file 
         </h6>
+
         <% if(fileArr.length == 0) { %>
             <h4> No files have been uploaded</h4>
-            <a href="/email"> Click here to upload your files</a>
+            <a href="/upload"> Click here to upload your files</a>
         <% } %>
         
         <div class="manage-list-block">
@@ -73,7 +74,7 @@ index.js-->
                     <a href="/view/<%= file %>">
                         View
                     </a>
-                    <a href="/delete/<%= file %>">
+                    <a href="/manage/delete/<%= file %>">
                         Delete
                     </a>
                 </li>

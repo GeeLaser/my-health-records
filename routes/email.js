@@ -73,9 +73,11 @@ if(pathstring[0].length == 1) {
 else {
     for(i = 0; i < pathstring.length; ++i) {
         pathstring[i] =  path.join("uploads/" + pathstring[i].trim())
-        dynamicAttachments.push({
-            path: pathstring[i]
-        })
+        dynamicAttachments.push(
+            {
+                path: pathstring[i]
+            }
+        )
     }
     var message = {
         from: userEmail,

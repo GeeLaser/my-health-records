@@ -61,6 +61,7 @@ input {
   
   /* The message box is shown when the user clicks on the password field */
   #message {
+    text-align: center;
     width: 50%;
     display:none;
     background: #f1f1f1;
@@ -71,7 +72,7 @@ input {
   }
   
   #message div {
-    font-size: 18px;
+    font-size: 14px;
   }
   
   /* Add a green text color and a checkmark when the requirements are right */
