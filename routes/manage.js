@@ -48,6 +48,19 @@ const checkNotAuthenticated = require("../functions/checkNotAuth")
       }
     );
   });
+
+  router.get("/delete/:file", (req, res) => {
+    pathToFile = path.join("uploads/" + req.params.file)
+    fs.unlink(pathToFile, function(err) {
+        if (err) {
+          throw err
+        } else {
+          console.log("Successfully deleted the file.")
+          res.redirect(303, '/manage')
+        }
+      })
+  });
+
   
   
   
