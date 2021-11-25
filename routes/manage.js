@@ -48,7 +48,7 @@ const checkNotAuthenticated = require("../functions/checkNotAuth")
       }
     );
   });
-//Unlink file from directory == delete file
+
   router.get("/delete/:file", (req, res) => {
     pathToFile = path.join("uploads/" + req.params.file)
     fs.unlink(pathToFile, function(err) {
@@ -60,6 +60,7 @@ const checkNotAuthenticated = require("../functions/checkNotAuth")
         }
       })
   });
+
   
   
   
