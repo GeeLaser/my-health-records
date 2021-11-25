@@ -52,7 +52,7 @@ router.get('/', checkAuthenticated, async function(req, res) {
 // and sends it to the desired email address
 router.post("/sendEmail", checkAuthenticated, (req, res) => {
   var pathstring = req.body.checkedFile;
-  console.log(pathstring[0].length)
+  console.log(req.body)
   var dynamicAttachments = [];
 
 if(pathstring[0].length == 1) {

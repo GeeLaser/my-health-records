@@ -27,6 +27,7 @@ router.get('/', checkNotAuthenticated, (req, res) => {
   });
   
   router.post('/', checkNotAuthenticated, async (req, res) => {
+    console.log(req.body)
     var errorString = '';
     try {
       if (req.body.password != req.body.confirmPassword) {

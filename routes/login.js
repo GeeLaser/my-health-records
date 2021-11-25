@@ -17,7 +17,7 @@ router.get('/', checkNotAuthenticated, (req, res) => {
     res.render('login.ejs')
   })
   
-  router.post('/', checkNotAuthenticated, passport.authenticate('local', {
+router.post('/', checkNotAuthenticated, passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/login',
     failureFlash: true

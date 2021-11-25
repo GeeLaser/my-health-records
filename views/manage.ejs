@@ -65,10 +65,11 @@ index.js-->
         
         <div class="manage-list-block">
             <ul class="manage-list">
+                
                 <% fileArr.forEach((file) => { %>
                 <li>
                     <span><%= file %></span>
-                    <a href = "/manage/<%= file %>">
+                    <a href = "/manage/download/<%= file %>/">
                         Download
                     </a>
                     <a href="/view/<%= file %>">
@@ -77,6 +78,7 @@ index.js-->
                     <a href="/manage/delete/<%= file %>">
                         Delete
                     </a>
+                    
                 </li>
                 <% }) %>
             </ul>
