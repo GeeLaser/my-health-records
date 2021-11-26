@@ -2,6 +2,7 @@ const chai = require('chai')
 const app = require('../app')
 const chaiHttp = require('chai-http');
 const { response } = require('../app');
+const { request } = require('chai');
 
 chai.use(chaiHttp)
 chai.should();
@@ -57,4 +58,13 @@ describe('API tasks', () => {
                 done();
             })
     })
+    it('Should GET download page', (done) => {
+        chai.request(app)
+            .get('/manage')
+            .end((err, response) => {
+                response.should.have.status(200)
+                done();
+            })
+    })
+    
 })
