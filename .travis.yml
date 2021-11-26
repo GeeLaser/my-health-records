@@ -4,3 +4,7 @@ node_js:
   
 script:
   - echo '**** build start ****'
+  - npm install
+  - echo 'running tests'
+  - npm run test
+  

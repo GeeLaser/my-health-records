@@ -14,6 +14,7 @@ initializePassport(
 )
 
 router.get('/', checkNotAuthenticated, (req, res) => {
+  console.log(req.body)
     res.render('login.ejs')
   })
   

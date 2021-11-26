@@ -41,10 +41,11 @@ const checkNotAuthenticated = require("../functions/checkNotAuth")
   // when a user clicks a file link this function is called and the file they
   // requested is downloaded on download page 
   router.get("/download/:file", (req, res) => { 
+    console.log(req.params.file)
     res.download(
       path.join("uploads/" + req.params.file),
       (err) => {
-        if (err) res.status(404).send("<h1>Not found: 404</h1>");
+        if (err) res.status(404).send("<h1>Not found: 404 my error</h1>");
       }
     );
   });
