@@ -8,7 +8,7 @@ chai.should();
 
 // tests for upload, email, and download
 describe('API tasks', () => {
-    it('Should get upload page', (done) => {
+    it('Should GET upload page', (done) => {
         chai.request(app)
             .get('/upload')
             .end((err, response) => {
@@ -26,6 +26,14 @@ describe('API tasks', () => {
                     encoding: '7bit',
                     mimetype: 'application/pdf'
                 })
+            .end((err, response) => {
+                response.should.have.status(200)
+                done();
+            })
+    })
+    it('Should GET email page', (done) => {
+        chai.request(app)
+            .get('/email')
             .end((err, response) => {
                 response.should.have.status(200)
                 done();
