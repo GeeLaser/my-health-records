@@ -60,7 +60,7 @@ app.use('/login', loginPath)
 app.use('/register', registerPath)
 app.use('/logout', logoutPath)
 
-app.listen(8080, function(error) {
+app.listen(8080, function (error) {
   if (error) throw error
   console.log("Server created Successfully on PORT 8080")
 })

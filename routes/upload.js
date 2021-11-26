@@ -83,7 +83,7 @@ var storage = multer.diskStorage({
       } else {
         // SUCCESS, image successfully uploaded
         // render redirect page
-        res.redirect(301, 'redirectUpload');
+        res.redirect(200, 'redirectUpload');
       }
     })
   })
