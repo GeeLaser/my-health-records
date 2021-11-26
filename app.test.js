@@ -1,4 +1,5 @@
-const { expect } = require("chai")
+const { expect } = require("chai");
+const { doesNotThrow } = require("should");
 const request = require("supertest")
 const app = require("./app")
 
@@ -17,4 +18,10 @@ it('uploads document', () => {
         encoding: '7bit',
         mimetype: 'application/pdf'
     }).expect(200);
+    
 })
+
+afterAll(done => {
+    server.close();
+    done();
+});
