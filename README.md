@@ -5,23 +5,18 @@ Team two - Allen Lu and Henry Madsen
 
 SEE BOTTOM FOR USAGE
 
-IF YOU ARE GRADING THIS ASSIGNMENT AFTER NOV 16th PLEASE VISIT THIS BRANCH AS IT CONTAINS COMMITS UP UNTIL THE PROJECT DUE DATE:
-https://github.com/AllenLuGitHub/my-health-records/tree/0b59e668262ce07fff3afa908575c0039b7e7df5
-
 Project description: My Health Records seeks to empower individuals to take an active role in their health care, and provide technology and service to make that easy. The focus of the product is to host secure storage of a person’s records for that person’s use, as well as provide an easy to use application to facilitate viewing, sharing and updating health records.
 
-Sprint 1 log:
-During sprint one Allen and I decided implementig upload, download, and share features were the most crucial to begin with. We did this by using a framework called multer to deal with uploads, express to deal with downloads, and nodemailer to facilitate sharing. During sprint 2 we plan to implement ehrBase and openEHR standards to store documents instead of storing them on the root folder and create a login system so assume while using the current implementation you have already logged into the application with a username and password. Below we go into more details about each feature and the plan moving forward:
+Sprint 2 log:
+During sprint two Allen and I decided implementing the ability to send multiple files, do in browser file viewing, and delete files were the most crucial to add . We did this by using a framework called nodemailer to deal with emails and express/fs to deal with deletes/viewing.
 
-- Upload Health Records feature:
-  - This feature is critical to this application therefore it was the first feature we implemented. We use a multipart/form-data form to allow the user to choose       one or more files to upload and middleware called multer to deal with 'saving' the files to the uploads folder serverside. We are currently in discussion           whether or not to store documents as we are now or to store the file's binary data in a ehrBase database (we are leaning towards the latter option).
+- Send multipl Health Records feature:
+  - This feature is critical to this application because in many cases a patient will need to share multiple files. The implementation of this requred some json formatting and creating custom messages for nodemailer to send
 
-- Download Health Records feature: 
-  -  Being able to download your records on the go and give them to a doctor is one key goal of this application som aking the process simple and easy was a top          priority. Using ejs and express, we display a link to each of the user's uploaded files and with one click, the user can download any file they need from the        site. Moving forward, we would like to give the user the ability to view the file they are downloading on the page before downloading it to thier device.
+- View/delete Health Records feature: 
+  -  Being able to delete old health records in very important to eliminate outdated records so that users know they are always sharing the most current records and being able to delete helps eliminate blotage on the server/database. Being able to view your records is important because it eliminates any confusion about which record is which and if it can saely be deleted from the server. 
 
-- Share Health Records feature: 
-  - One of the biggest issues with managing one's health records is sharing them with those who need them. With our built in email api the user can simply navigate     to the 'send files' tab and fill in the form to any one of their health records to a medical professional or anyone else who might need it. We use nodemailer to     allow the user to share files without having to log into thier email address by sending the email from a email tied to the server (it is called                     testusersd4353@gmail.com, in the future we would like to move away from gmail and create our own STMP email server) to avoid burdening the user with                 connectingour app to their mailing accounts and to ensure the security of their email credentials. Moving forward, we want to enable captcha and other security     measures to avoid abuse on this system as well as allow users to send multiple files at once.
-
+NEEDS UPDATING 
 USAGE: 
 1. Download or clone repo
 2. Install the latest version of node js from https://nodejs.org/en/download/ (you can use homebrew if on mac but this can be weird)
