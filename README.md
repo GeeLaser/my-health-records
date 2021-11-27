@@ -1,4 +1,6 @@
 # my-health-records
+
+[![Build Status](https://app.travis-ci.com/hhm14/my-health-records.svg?branch=main)](https://app.travis-ci.com/hhm14/my-health-records)
 Team two - Allen Lu and Henry Madsen
 
 SEE BOTTOM FOR USAGE
