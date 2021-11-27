@@ -10,7 +10,7 @@ Project description: My Health Records seeks to empower individuals to take an a
 Sprint 2 log:
 During sprint two Allen and I decided implementing the ability to send multiple files, do in browser file viewing, and delete files were the most crucial to add . We did this by using a framework called nodemailer to deal with emails and express/fs to deal with deletes/viewing.
 
-- Send multipl Health Records feature:
+- Send multiple Health Records feature:
   - This feature is critical to this application because in many cases a patient will need to share multiple files. The implementation of this requred some json formatting and creating custom messages for nodemailer to send
 
 - View/delete Health Records feature: 
