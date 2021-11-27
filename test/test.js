@@ -3,6 +3,10 @@ const app = require('../app')
 const chaiHttp = require('chai-http');
 const { response } = require('../app');
 const { request } = require('chai');
+const fs = require('fs')
+var assert = require('assert');
+
+const manage = require('../routes/manage');
 
 chai.use(chaiHttp)
 chai.should();
@@ -58,7 +62,7 @@ describe('API tasks', () => {
                 done();
             })
     })
-    it('Should GET download page', (done) => {
+    it('Should GET download/manage page', (done) => {
         chai.request(app)
             .get('/manage')
             .end((err, response) => {
@@ -66,5 +70,36 @@ describe('API tasks', () => {
                 done();
             })
     })
-    
+
+})
+
+var getUploads = require('../functions/getUploads')
+var getNumFiles = require('../functions/getNumFiles');
+const sendMail = require('../functions/sendEmail');
+
+describe('Unit Tests', () => {
+    it('Number of user uploads == user files in uploads directory', () => {
+        var numUploads = getUploads(987461)
+        var numfiles = getNumFiles(987461)
+        assert.equal(numUploads.length, numfiles)
+    })
+    it('Should construct the same message', () => {
+        var request =
+        {
+            to: 'henryhmadsen@gmail.com',
+            subject: 'this is a test',
+            body: 'hi doc here are the records ',
+            checkedFile: [
+                'tofile',
+            ]
+        }
+
+
+        var returnedMessage = sendMail(request)
+
+        assert(request.to == returnedMessage.to)
+        assert(request.subject == returnedMessage.subject)
+        assert(request.body == returnedMessage.text)
+  
+    })
 })
