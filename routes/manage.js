@@ -53,7 +53,7 @@ var getUploads = require('../functions/getUploads')
   //the file in a pdf viewer to view the document
   router.get("/view/:file", (req, res) => {
 
-    res.render("uploads/" + req.params.file)
+    //res.render("uploads/" + req.params.file)
 
     var myState = {
       pdf: null,
