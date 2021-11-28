@@ -16,7 +16,7 @@ router.get('/', checkNotAuthenticated, (req, res) => {
   })
   
   var userEmail = 'testusersd4353@gmail.com'
-  var pass = 'Remember1!'
+  var pass = 'fxqxadqojxnptkuq'
   
   var transport = nodemailer.createTransport({
     service: 'gmail',
@@ -28,7 +28,7 @@ router.get('/', checkNotAuthenticated, (req, res) => {
   
   router.post('/', checkNotAuthenticated, async (req, res) => {
     console.log(req.body)
-    var errorString = '';
+    var errorString = 'There was an error creating your account';
     try {
       if (req.body.password != req.body.confirmPassword) {
         console.log("passwords didnt match")
