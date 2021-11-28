@@ -25,11 +25,12 @@
     opacity: 65%;
     padding-bottom: .5%;
 }
-.under-h1 {
-    padding-bottom: 1%;
-    
+.under-h1 {    
     opacity: 80%;
-    padding-bottom: .5%;
+}
+.under-h6 {    
+  opacity: 80%;
+  font-size: medium;
 }
 
 .show-password {
@@ -117,4 +118,8 @@ input {
 .manage-list {
     display: inline-block; 
 	text-align: left; 
+}
+
+.error {
+  color: red;
 }
