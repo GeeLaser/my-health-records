@@ -12,6 +12,6 @@ function numberOfFiles (userNum) {
         }
       })
   
-      return filenames.length
+      return count;
   }
   module.exports = numberOfFiles

@@ -10,6 +10,8 @@ const fs = require("fs");
 const checkAuthenticated = require("../functions/checkAuth")
 const checkNotAuthenticated = require("../functions/checkNotAuth")
 
+
+
 // set the destination multer sends files to as the uploads folder 	
 var storage = multer.diskStorage({
     destination: function(req, file, cb) {
@@ -83,7 +85,7 @@ var storage = multer.diskStorage({
       } else {
         // SUCCESS, image successfully uploaded
         // render redirect page
-        res.redirect(200, 'redirectUpload');
+        res.redirect(301, 'redirectUpload');
       }
     })
   })
