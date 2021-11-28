@@ -49,5 +49,43 @@ var getUploads = require('../functions/getUploads')
       })
   });
 
+  //when user clicks a file link this function will allow the user to view 
+  //the file in a pdf viewer to view the document
+  router.get("/view/:file", (req, res) => {
+
+    res.render("uploads/" + req.params.file)
+
+    var myState = {
+      pdf: null,
+      currentPage: 1,
+      zoom: 1
+  }
+
+  pdfjsLib.getDocument('./my_document.pdf').then((pdf) => {
+
+      myState.pdf = pdf;
+      render();
+
+  });
+
+  function render() {
+      myState.pdf.getPage(myState.currentPage).then((page) => {
+    
+          var canvas = document.getElementById("pdf_renderer");
+          var ctx = canvas.getContext('2d');
+
+          var viewport = page.getViewport(myState.zoom);
+
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+    
+          page.render({
+              canvasContext: ctx,
+              viewport: viewport
+          });
+      });
+  }
+  });
+
   
   module.exports = router, {getUploads, numberOfFiles}
