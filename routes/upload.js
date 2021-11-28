@@ -48,8 +48,7 @@ var storage = multer.diskStorage({
         return cb(null, true);
       }
   
-      cb("Error: File upload only supports the " +
-        "following filetypes - " + filetypes);
+      cb(new Error ('type error'));
   
     }
   
@@ -81,7 +80,14 @@ var storage = multer.diskStorage({
         // ERROR occured (here it can be occured due
         // to uploading image of size greater than
         // 10MB or uploading different file type)
-        res.send(err);
+        var message = 'Please upload a smaller file (less than 10 MB)'
+        if(err == 'Error: type error') {
+           message = 'Please only upload PDF, PNG, JPG, or JPEG files '
+        }
+        res.render('uploadError', {
+          name: req.user.name,
+          errorMessage: message
+        });
       } else {
         // SUCCESS, image successfully uploaded
         // render redirect page

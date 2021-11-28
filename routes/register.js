@@ -28,7 +28,7 @@ router.get('/', checkNotAuthenticated, (req, res) => {
   
   router.post('/', checkNotAuthenticated, async (req, res) => {
     console.log(req.body)
-    var errorString = '';
+    var errorString = 'There was an error creating your account';
     try {
       if (req.body.password != req.body.confirmPassword) {
         console.log("passwords didnt match")
