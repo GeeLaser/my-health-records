@@ -84,22 +84,30 @@ describe('Unit Tests', () => {
         assert.equal(numUploads.length, numfiles)
     })
     it('Should construct the same message', () => {
-        var request =
-        {
+
+        var body = {
             to: 'henryhmadsen@gmail.com',
             subject: 'this is a test',
             body: 'hi doc here are the records ',
-            checkedFile: [
-                'tofile',
-            ]
+        }
+
+        var user = {
+            name: "test user"
+        }
+
+        var request =
+        {
+            body: body,
+            user: user
         }
 
 
         var returnedMessage = sendMail(request)
 
-        assert(request.to == returnedMessage.to)
-        assert(request.subject == returnedMessage.subject)
-        assert(request.body == returnedMessage.text)
-  
-    })
+    assert(request.body.to == returnedMessage.to)
+    assert('test user says: this is a test' == returnedMessage.subject)
+    assert(request.body.body == returnedMessage.text)
+    
+
+})
 })

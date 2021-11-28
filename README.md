@@ -26,9 +26,8 @@ You may either follow the steps below of view our tutorial for installation on Y
 2. Download or clone repo
 3. Navigate to top level directory of the project in your favorite IDE or your file system (go to the my-health-records directory)
 4. Open a terminal at the my-health-records directory, run "npm i" (you may have to download some packages manually although this should not happen. In this case run: "npm i ejs express filereader multer sequelize", and/or npm i [package] that is not download my npm ci)
-5. On line 6 in sendEmail.js please replace "xxxx" with the password provided in the peer evaluation form or from the report we submitted. Alternativly, you can replace the email on line 5 with your gmail and "xxxx" on line 6 with your password to send emails from your account although you will need to allow the application to access your gmail account. (email henryhmadsen@gmail.com or allenlu9326@gmail.com if you need help with this step)
-6. Run the project by typing "node app.js" or "npm run devStart" (this command will launch the site with nodemon) in the terminal from the my-health-records directory 
-7. In your web browser go to http://localhost:8080/ to view the app and try the features
+5. Run the project by typing "node app.js" or "npm run devStart" (this command will launch the site with nodemon) in the terminal from the my-health-records directory 
+6. In your web browser go to http://localhost:8080/ to view the app and try the features
 
 Please email henryhmadsen@gmail.com or allenlu9326@gmail.com with any questions. 
 
