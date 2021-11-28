@@ -22,7 +22,7 @@ function sendMail(req) {
           var message = {
                from: userEmail,
                to: req.body.to,
-               subject: req.user.name +" says:  "+ req.body.subject,
+               subject: req.user.name +" says: "+ req.body.subject,
                text: req.body.body,
           };
      }
@@ -32,7 +32,7 @@ function sendMail(req) {
           var message = {
                from: userEmail,
                to: req.body.to,
-               subject: req.user.name +" says:  "+ req.body.subject,
+               subject: req.user.name +" says: "+ req.body.subject,
                text: req.body.body,
                attachments: [
                     {
