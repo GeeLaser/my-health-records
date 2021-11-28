@@ -16,7 +16,7 @@ router.get('/', checkNotAuthenticated, (req, res) => {
   })
   
   var userEmail = 'testusersd4353@gmail.com'
-  var pass = 'Remember1!'
+  var pass = 'fxqxadqojxnptkuq'
   
   var transport = nodemailer.createTransport({
     service: 'gmail',
