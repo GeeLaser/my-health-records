@@ -3,7 +3,7 @@ const nodemailer = require("nodemailer")
 const fs = require("fs");
 
 var userEmail = 'testusersd4353@gmail.com'
-var pass = 'Remember1!'
+var pass = 'fxqxadqojxnptkuq'
 
 var transport = nodemailer.createTransport({
      service: 'gmail',
@@ -14,19 +14,29 @@ var transport = nodemailer.createTransport({
    });
 
 function sendMail(req) {
-     var pathstring = req.checkedFile;
+     var pathstring = req.body.checkedFile;
      var dynamicAttachments = [];
-
-     if (pathstring[0].length == 1) {
+     console.log(pathstring)
+     if (pathstring == undefined) {
 
           var message = {
                from: userEmail,
-               to: req.to,
-               subject: req.subject,
-               text: req.body,
+               to: req.body.to,
+               subject: req.user.name +" says:  "+ req.body.subject,
+               text: req.body.body,
+          };
+     }
+
+     else if (pathstring[0].length == 1) {
+
+          var message = {
+               from: userEmail,
+               to: req.body.to,
+               subject: req.user.name +" says:  "+ req.body.subject,
+               text: req.body.body,
                attachments: [
                     {
-                         path: path.join("uploads/" + req.checkedFile.trim())
+                         path: path.join("uploads/" + req.body.checkedFile.trim())
                     }
                ]
           };
@@ -43,9 +53,9 @@ function sendMail(req) {
           }
           var message = {
                from: userEmail,
-               to: req.to,
-               subject: req.subject,
-               text: req.body,
+               to: req.body.to,
+               subject: req.user.name + req.body.subject,
+               text: req.body.body,
                attachments: dynamicAttachments
           };
      }

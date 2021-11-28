@@ -24,9 +24,8 @@ router.get('/', checkAuthenticated, async function (req, res) {
 // post called once the user clicks the submit email button, creates new nodemialer email 
 // and sends it to the desired email address
 router.post("/sendEmail", checkAuthenticated, (req, res) => {
-  console.log(req)
-  var message = sendEmail(req.body)
-
+  
+  var message = sendEmail(req)
   res.redirect(301, "redirectEmail")
 });
 
