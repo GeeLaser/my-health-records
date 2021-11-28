@@ -7,29 +7,16 @@ const fs = require("fs");
 const checkAuthenticated = require("../functions/checkAuth")
 const checkNotAuthenticated = require("../functions/checkNotAuth")
 
+var numberOfFiles = require('../functions/getNumFiles')
+var getUploads = require('../functions/getUploads')
+
 
   router.get('/', checkAuthenticated, async function(req, res, next) {
 
-    let directory_name = "uploads";
-  
-    // Function to get current filenames
-    // in directory
-    let filenames = fs.readdirSync(directory_name);
-    var arr = [];
-    uid = req.user.id;
-    console.log("\nFilenames in directory:");
-    for (i = 0; i < filenames.length; ++i) {
-      console.log("File:", filenames[i]);
-  
-      if (filenames[i] == ".DS_Store") {
-        continue;
-      }
-      if (filenames[i].substr(0, 6) == uid) {
-        console.log(filenames[i].substr(0, 6), uid, "User's document")
-        arr.push(filenames[i])
-      }
-    }
-    
+    console.log(numberOfFiles(req.user.id))
+    var arr = getUploads(req.user.id)
+
+    console.log(arr)
     // first we get all files in directory (Except D.S_Store file) then send them to the 
     // download.ejs file to display
     res.render('manage', {
@@ -100,4 +87,5 @@ const checkNotAuthenticated = require("../functions/checkNotAuth")
   }
   });
 
-  module.exports = router
+  
+  module.exports = router, {getUploads, numberOfFiles}
