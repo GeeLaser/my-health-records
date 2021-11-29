@@ -9,3 +9,184 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210905.0/
+AnonymousFunction57562e190100	server/routes/auth.js	/^  User.findOne({ email: req.body.email }, function (err, user) {$/;"	f
+AnonymousFunction57562e190200	server/routes/auth.js	/^    user.save(function (err) {$/;"	f
+AnonymousFunction57562e190300	server/routes/auth.js	/^      token.save(function (err) {$/;"	f
+AnonymousFunction57562e190400	server/routes/auth.js	/^  Token.findOne({ token: req.params.token }, function (err, token) {$/;"	f
+AnonymousFunction57562e190500	server/routes/auth.js	/^    User.findById(token._userId, function (err, user) {$/;"	f
+AnonymousFunction57562e190600	server/routes/auth.js	/^        user.save(function (err) {$/;"	f
+AnonymousFunction57562e190700	server/routes/auth.js	/^  let user = await User.findOne({ username: req.body.username.toLowerCase() }, function (err) {$/;"	f
+AnonymousFunction57562e190800	server/routes/auth.js	/^  user = await User.findOne({ email: req.body.email.toLowerCase() }, function (err) {$/;"	f
+AnonymousFunction57562e190900	server/routes/auth.js	/^        token.save(function (err) {$/;"	f
+AnonymousFunction57562e190a00	server/routes/auth.js	/^              User.findOneAndDelete({ email: user.email, isVerified: false }, function (err) {$/;"	f
+AnonymousFunction57562e190b00	server/routes/auth.js	/^  User.findOne({ email: req.body.email }, function (err, user) {$/;"	f
+AnonymousFunction57562e190c00	server/routes/auth.js	/^    token.save(function (err) {$/;"	f
+AnonymousFunction57562e190d00	server/routes/auth.js	/^  User.findOneAndDelete({ email: req.body.email, isVerified: false }, function (err, user) {$/;"	f
+AnonymousFunction57562e190e00	server/routes/auth.js	/^  Token.findOne({ token: req.params.token }, function (err, token) {$/;"	f
+AnonymousFunction57562e190f00	server/routes/auth.js	/^    User.findById(token._userId, function (err, user) {$/;"	f
+AnonymousFunction57562e191000	server/routes/auth.js	/^      user.save(function (err) {$/;"	f
+App	client/src/App.jsx	/^export default function App() {$/;"	f
+Error	client/src/components/Error.jsx	/^export default function Error({ children }) {$/;"	f
+Home	client/src/pages/HomePage.jsx	/^export default function Home() {$/;"	f
+Joi	server/models/user.js	/^const Joi = require("joi");$/;"	C
+Joi	server/startup/validation.js	/^const Joi = require("joi");$/;"	C
+LOGIN_USER	client/src/store/actions/user.js	/^export const LOGIN_USER = "LOGIN_USER";$/;"	C
+LOGOUT_USER	client/src/store/actions/user.js	/^export const LOGOUT_USER = "LOGOUT_USER";$/;"	C
+LocalStrategy	server/startup/passport/passport-setup.js	/^const LocalStrategy = require("passport-local").Strategy;$/;"	C
+LoginPage	client/src/pages/LoginPage.jsx	/^export default function LoginPage() {$/;"	f
+LogoutPage	client/src/pages/protected/LogoutPage.jsx	/^export default function LogoutPage() {$/;"	f
+MongoStore	server/index.js	/^const MongoStore = require("connect-mongo");$/;"	C
+NavBar	client/src/components/NavBar.jsx	/^export default function NavBar() {$/;"	f
+ObjectId	server/models/token.js	/^const ObjectId = mongoose.Schema.Types.ObjectId;$/;"	C
+ProfilePage	client/src/pages/protected/ProfilePage.jsx	/^export default function ProfilePage() {$/;"	f
+ProtectedRoute	client/src/components/ProtectedRoute.jsx	/^export default function ProtectedRoute({ path, component }) {$/;"	f
+R	server/models/user.js	/^const R = require("ramda");$/;"	C
+RESET_USER	client/src/store/actions/user.js	/^export const RESET_USER = "RESET_USER";$/;"	C
+RegisterConfirmationPage	client/src/pages/RegisterConfirmationPage.jsx	/^export default function RegisterConfirmationPage() {$/;"	f
+RegisterPage	client/src/pages/RegisterPage.jsx	/^export default function RegisterPage() {$/;"	f
+ResetPasswordPage	client/src/pages/ResetPasswordPage.jsx	/^export default function ResetPasswordPage() {$/;"	f
+ResetPasswordRequestPage	client/src/pages/ResetPasswordRequestPage.jsx	/^export default function ResetPasswordRequestPage() {$/;"	f
+SET_USER	client/src/store/actions/user.js	/^export const SET_USER = "SET_USER";$/;"	C
+Session	server/models/session.js	/^const Session = mongoose.model("Session", sessionSchema);$/;"	C
+Token	server/models/token.js	/^const Token = mongoose.model("Token", tokenSchema);$/;"	C
+User	server/models/user.js	/^const User = mongoose.model("User", userSchema);$/;"	C
+app	server/index.js	/^const app = express();$/;"	C
+attemptGetConfirmation	client/src/store/thunks/auth.js	/^export const attemptGetConfirmation = (token) => (dispatch) =>$/;"	C
+attemptGetUser	client/src/store/thunks/user.js	/^export const attemptGetUser = () => (dispatch) =>$/;"	C
+attemptLogin	client/src/store/thunks/auth.js	/^export const attemptLogin = (user) => (dispatch) =>$/;"	C
+attemptLogout	client/src/store/thunks/auth.js	/^export const attemptLogout = () => (dispatch) =>$/;"	C
+attemptRegister	client/src/store/thunks/auth.js	/^export const attemptRegister = (newUser) => () => postRegister(newUser);$/;"	C
+attemptResendConfirmation	client/src/store/thunks/auth.js	/^export const attemptResendConfirmation = (email) => (dispatch) =>$/;"	C
+attemptResetPassword	client/src/store/thunks/auth.js	/^export const attemptResetPassword = (password, token) => (dispatch) =>$/;"	C
+attemptResetRegister	client/src/store/thunks/auth.js	/^export const attemptResetRegister = (email) => (dispatch) =>$/;"	C
+attemptSendResetPasswordLink	client/src/store/thunks/auth.js	/^export const attemptSendResetPasswordLink = (email) => (dispatch) =>$/;"	C
+auth	server/routes/index.js	/^const auth = require(".\/auth");$/;"	C
+bcrypt	server/models/user.js	/^const bcrypt = require("bcryptjs");$/;"	C
+bodyParser	server/index.js	/^const bodyParser = require("body-parser");$/;"	C
+buildRootReducer	client/src/store/reducers/index.js	/^const buildRootReducer = (history) =>$/;"	C
+checkValidServiceWorker	client/src/registerServiceWorker.js	/^function checkValidServiceWorker(swUrl) {$/;"	f
+compression	server/startup/prod.js	/^const compression = require("compression");$/;"	C
+configureStore	client/src/store/configureStore.js	/^export default function configureStore(history, initialState = {}) {$/;"	f
+cors	server/startup/cors.js	/^const cors = require("cors");$/;"	C
+crypto	server/routes/auth.js	/^const crypto = require("crypto");$/;"	C
+doSubmit	client/src/pages/RegisterConfirmationPage.jsx	/^  function doSubmit() {$/;"	f	function:RegisterConfirmationPage
+email	client/src/pages/RegisterPage.jsx	/^    email: "",$/;"	p	class:RegisterPage.initialValues
+email	client/src/pages/ResetPasswordRequestPage.jsx	/^    email: "",$/;"	p	class:ResetPasswordRequestPage.initialValues
+error	server/routes/index.js	/^const error = require("..\/middleware\/error");$/;"	C
+exports	server/middleware/admin.js	/^module.exports = function(req, res, next) {$/;"	f	function:module
+exports	server/middleware/async.js	/^module.exports = function (handler) {$/;"	f	function:module
+exports	server/middleware/auth.js	/^module.exports = function(req, res, next) {$/;"	f	function:module
+exports	server/middleware/error.js	/^module.exports = function(err, req, res, next){$/;"	f	function:module
+exports	server/middleware/validateObjectId.js	/^module.exports = function(req, res, next) {$/;"	f	function:module
+exports	server/routes/index.js	/^module.exports = function (app) {$/;"	f	function:module
+exports	server/startup/cors.js	/^module.exports = function(app) {$/;"	f	function:module
+exports	server/startup/db.js	/^module.exports = function () {$/;"	f	function:module
+exports	server/startup/logging.js	/^module.exports = function () {$/;"	f	function:module
+exports	server/startup/passport/passport-setup.js	/^module.exports = function() {$/;"	f	function:module
+exports	server/startup/prod.js	/^module.exports = function (app) {$/;"	f	function:module
+exports	server/startup/validation.js	/^module.exports = function() {$/;"	f	function:module
+express	server/index.js	/^const express = require("express");$/;"	C
+express	server/routes/auth.js	/^const express = require("express");$/;"	C
+express	server/routes/user.js	/^const express = require("express");$/;"	C
+from	server/routes/auth.js	/^            from: `${sendingEmail}`,$/;"	p	class:AnonymousFunction57562e190600.mail
+from	server/routes/auth.js	/^            from: `${sendingEmail}`,$/;"	p	class:AnonymousFunction57562e190900.message
+from	server/routes/auth.js	/^          from: `${sendingEmail}`,$/;"	p	class:AnonymousFunction57562e190300.mail
+from	server/routes/auth.js	/^        from: `${sendingEmail}`,$/;"	p	class:AnonymousFunction57562e190c00.mail
+getConfirmation	client/src/api/index.js	/^const getConfirmation = (token) => http.get(`\/auth\/confirmation\/${token}`);$/;"	C
+getUser	client/src/api/index.js	/^const getUser = () => http.get("\/user");$/;"	C
+hashPassword	server/models/user.js	/^userSchema.methods.hashPassword = function () {$/;"	f	function:userSchema.methods
+helmet	server/startup/prod.js	/^const helmet = require("helmet");$/;"	C
+hidePassword	server/models/user.js	/^userSchema.methods.hidePassword = function () {$/;"	f	function:userSchema.methods
+history	client/src/index.js	/^const history = createBrowserHistory();$/;"	C
+host	server/routes/auth.js	/^const host = process.env.HOST; \/\/ FRONTEND Host$/;"	C
+html	server/routes/auth.js	/^            html: `<p>Please verify your account by clicking the link: $/;"	p	class:AnonymousFunction57562e190900.message
+html	server/routes/auth.js	/^            html: `<p>This is a confirmation that the password for your account ${user.email} ha/;"	p	class:AnonymousFunction57562e190600.mail
+html	server/routes/auth.js	/^          html: `<p>You are receiving this because you (or someone else) have requested the rese/;"	p	class:AnonymousFunction57562e190300.mail
+html	server/routes/auth.js	/^        html: `<p>Please verify your account by clicking the link: $/;"	p	class:AnonymousFunction57562e190c00.mail
+httpService	client/src/services/httpService.js	/^const httpService = {$/;"	C
+initialState	client/src/store/reducers/user.js	/^const initialState = {$/;"	c
+initialValues	client/src/pages/LoginPage.jsx	/^  const initialValues = {$/;"	c	class:LoginPage
+initialValues	client/src/pages/RegisterPage.jsx	/^  const initialValues = {$/;"	c	class:RegisterPage
+initialValues	client/src/pages/ResetPasswordPage.jsx	/^  const initialValues = {$/;"	c	class:ResetPasswordPage
+initialValues	client/src/pages/ResetPasswordRequestPage.jsx	/^  const initialValues = {$/;"	c	class:ResetPasswordRequestPage
+isAuth	client/src/store/reducers/user.js	/^  isAuth: false,$/;"	p	class:initialState
+isLocalhost	client/src/registerServiceWorker.js	/^const isLocalhost = Boolean($/;"	C
+login	client/src/store/actions/user.js	/^export function login(user) {$/;"	f
+logout	client/src/store/actions/user.js	/^export function logout() {$/;"	f
+mail	server/routes/auth.js	/^          const mail = {$/;"	c	class:AnonymousFunction57562e190600
+mail	server/routes/auth.js	/^        const mail = {$/;"	c	class:AnonymousFunction57562e190300
+mail	server/routes/auth.js	/^      const mail = {$/;"	c	class:AnonymousFunction57562e190c00
+message	server/routes/auth.js	/^          const message = {$/;"	c	class:AnonymousFunction57562e190900
+moment	server/models/user.js	/^const moment = require("moment");$/;"	C
+moment	server/routes/auth.js	/^const moment = require("moment");$/;"	C
+mongoose	server/index.js	/^const mongoose = require("mongoose");$/;"	C
+mongoose	server/middleware/validateObjectId.js	/^const mongoose = require("mongoose");$/;"	C
+mongoose	server/models/session.js	/^const mongoose = require("mongoose");$/;"	C
+mongoose	server/models/token.js	/^const mongoose = require("mongoose");$/;"	C
+mongoose	server/models/user.js	/^const mongoose = require("mongoose");$/;"	C
+mongoose	server/startup/db.js	/^const mongoose = require("mongoose");$/;"	C
+ns01f950b90101	client/src/logo.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" viewBox="0 0 841.9 595.3">$/;"	n	uri:http://www.w3.org/2000/svg
+options	server/startup/db.js	/^  const options = {$/;"	c	class:module.exports
+passport	server/index.js	/^const passport = require("passport");$/;"	C
+passport	server/routes/auth.js	/^const passport = require("passport");$/;"	C
+passport	server/startup/passport/passport-setup.js	/^const passport = require("passport");$/;"	C
+password	client/src/pages/LoginPage.jsx	/^    password: "",$/;"	p	class:LoginPage.initialValues
+password	client/src/pages/RegisterPage.jsx	/^    password: "",$/;"	p	class:RegisterPage.initialValues
+password	client/src/pages/ResetPasswordPage.jsx	/^    password: "",$/;"	p	class:ResetPasswordPage.initialValues
+path	client/src/components/ProtectedRoute.jsx	/^  return isAuth ? <Route path={path} exact component={component} \/> : <Redirect to='\/login' \//;"	M	class:ProtectedRoute.isAuth
+port	server/index.js	/^const port = process.env.PORT || 3900;$/;"	C
+postLogin	client/src/api/index.js	/^const postLogin = (user) => http.post("\/auth\/login", user);$/;"	C
+postLogout	client/src/api/index.js	/^const postLogout = () => http.post("\/auth\/logout");$/;"	C
+postRegister	client/src/api/index.js	/^const postRegister = (user) => http.post("\/auth\/register", user);$/;"	C
+register	client/src/registerServiceWorker.js	/^export default function register() {$/;"	f
+registerValidSW	client/src/registerServiceWorker.js	/^function registerValidSW(swUrl) {$/;"	f
+renderSwitch	client/src/pages/RegisterPage.jsx	/^  function renderSwitch() {$/;"	f	function:RegisterPage
+resendConfirmation	client/src/api/index.js	/^const resendConfirmation = (email) => http.post("\/auth\/resend", { email });$/;"	C
+resetPassword	client/src/api/index.js	/^const resetPassword = (password, token) => http.post(`\/auth\/login\/reset\/${token}`, { passwor/;"	C
+resetRegister	client/src/api/index.js	/^const resetRegister = (email) => http.post("\/auth\/register\/reset", { email });$/;"	C
+resetUser	client/src/store/actions/user.js	/^export function resetUser() {$/;"	f
+router	server/routes/auth.js	/^const router = express.Router();$/;"	C
+router	server/routes/user.js	/^const router = express.Router();$/;"	C
+sanitize	server/routes/auth.js	/^const sanitize = require("mongo-sanitize");$/;"	C
+sendResetPasswordLink	client/src/api/index.js	/^const sendResetPasswordLink = (email) => http.post("\/auth\/login\/forgot", { email });$/;"	C
+sendingEmail	server/routes/auth.js	/^const sendingEmail = process.env.SENDING_EMAIL;$/;"	C
+session	server/index.js	/^const session = require("express-session");$/;"	C
+sessionSchema	server/models/session.js	/^const sessionSchema = new Schema({$/;"	C
+setUser	client/src/store/actions/user.js	/^export function setUser(user) {$/;"	f
+sgMail	server/routes/auth.js	/^const sgMail = require("@sendgrid\/mail");$/;"	C
+store	client/src/index.js	/^const store = configureStore(history);$/;"	C
+subject	server/routes/auth.js	/^            subject: "Email Verification",$/;"	p	class:AnonymousFunction57562e190900.message
+subject	server/routes/auth.js	/^            subject: "Your password has been changed",$/;"	p	class:AnonymousFunction57562e190600.mail
+subject	server/routes/auth.js	/^          subject: "Reset password link",$/;"	p	class:AnonymousFunction57562e190300.mail
+subject	server/routes/auth.js	/^        subject: "Email Verification",$/;"	p	class:AnonymousFunction57562e190c00.mail
+text	server/routes/auth.js	/^            text: "Some useless text",$/;"	p	class:AnonymousFunction57562e190600.mail
+text	server/routes/auth.js	/^            text: "Some uselss text",$/;"	p	class:AnonymousFunction57562e190900.message
+text	server/routes/auth.js	/^          text: "Some useless text",$/;"	p	class:AnonymousFunction57562e190300.mail
+text	server/routes/auth.js	/^        text: "Some uselss text",$/;"	p	class:AnonymousFunction57562e190c00.mail
+to	server/routes/auth.js	/^            to: user.email,$/;"	p	class:AnonymousFunction57562e190600.mail
+to	server/routes/auth.js	/^            to: user.email,$/;"	p	class:AnonymousFunction57562e190900.message
+to	server/routes/auth.js	/^          to: user.email,$/;"	p	class:AnonymousFunction57562e190300.mail
+to	server/routes/auth.js	/^        to: user.email,$/;"	p	class:AnonymousFunction57562e190c00.mail
+tokenSchema	server/models/token.js	/^const tokenSchema = new mongoose.Schema({$/;"	C
+unregister	client/src/registerServiceWorker.js	/^export function unregister() {$/;"	f
+useCreateIndex	server/startup/db.js	/^    useCreateIndex: true,$/;"	p	class:module.exports.options
+useFindAndModify	server/startup/db.js	/^    useFindAndModify: false,$/;"	p	class:module.exports.options
+useNewUrlParser	server/startup/db.js	/^    useNewUrlParser: true,$/;"	p	class:module.exports.options
+useUnifiedTopology	server/startup/db.js	/^    useUnifiedTopology: true,$/;"	p	class:module.exports.options
+user	client/src/store/reducers/user.js	/^  user: null,$/;"	p	class:initialState
+user	client/src/store/reducers/user.js	/^export default function user(state = initialState, action) {$/;"	f
+user	server/routes/index.js	/^const user = require(".\/user");$/;"	C
+userSchema	server/models/user.js	/^const userSchema = new mongoose.Schema({$/;"	C
+username	client/src/pages/LoginPage.jsx	/^    username: "",$/;"	p	class:LoginPage.initialValues
+username	client/src/pages/RegisterPage.jsx	/^    username: "",$/;"	p	class:RegisterPage.initialValues
+validPassword	server/models/user.js	/^userSchema.methods.validPassword = function (password) {$/;"	f	function:userSchema.methods
+validateEmail	server/models/user.js	/^function validateEmail(input) {$/;"	f
+validateLoginInput	server/models/user.js	/^function validateLoginInput(input) {$/;"	f
+validatePassword	server/models/user.js	/^function validatePassword(input) {$/;"	f
+validateRegisterInput	server/models/user.js	/^function validateRegisterInput(input) {$/;"	f
+validateUser	server/models/user.js	/^function validateUser(user) {$/;"	f
+winston	server/index.js	/^const winston = require("winston");$/;"	C
+winston	server/middleware/error.js	/^const winston = require('winston');$/;"	C
+winston	server/routes/auth.js	/^const winston = require("winston");$/;"	C
+winston	server/startup/db.js	/^const winston = require("winston");$/;"	C
+winston	server/startup/logging.js	/^const winston = require("winston");$/;"	C
