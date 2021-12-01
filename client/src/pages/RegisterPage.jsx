@@ -22,6 +22,8 @@ export default function RegisterPage() {
     email: "",
     username: "",
     password: "",
+	first: "",
+	last: "",
   };
 
   const validationSchema = Yup.object({
@@ -89,6 +91,16 @@ export default function RegisterPage() {
                       <label htmlFor='password'>Password</label>
                       <Field id='password' name='password' type='password' placeholder='Password' />
                       <ErrorMessage name='password' component={Error} />
+                    </div>
+					<div className='field'>
+                      <label htmlFor='first'>First Name</label>
+                      <Field id='first' name='first' type='text' placeholder='First Name' />
+                      <ErrorMessage name='first' component={Error} />
+                    </div>
+					<div className='field'>
+                      <label htmlFor='last'>Last Name</label>
+                      <Field id='last' name='last' type='text' placeholder='Last Name' />
+                      <ErrorMessage name='last' component={Error} />
                     </div>
                     <button type='submit' disabled={!formik.dirty || !formik.isValid}>
                       Signup
