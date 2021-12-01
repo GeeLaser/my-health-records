@@ -84,13 +84,14 @@ Router.delete('/delete/:id', async (req, res) => {
   try {
     file = await File.findById(req.params.id);
     await file.remove();
-    fs.unlink('../'+file.file_path, (err) => {
+    fs.unlink('./'+file.file_path, (err) => {
       if (err) {
         console.log("failed to delete local image:"+err);
       } else {
         console.log('successfully deleted local image');                                
       }
     });
+    return res.status;
   } catch {
     if(file == null) {
       console.log('file is null');

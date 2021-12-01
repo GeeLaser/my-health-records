@@ -39,7 +39,13 @@ const FilesList = () => {
 
   const deleteFile = async (id) => {
     try {
-      const res = await axios.delete(`${API_URL}/delete/${id}`);
+      const res = await axios.delete(`${API_URL}/delete/${id}`)
+      .then (response => {
+        if(response.status === 'error'){
+          console.log('err');
+        } else axios.get(`${API_URL}/files`);
+      });
+      
       console.log(res.data);
     } catch (err) {
       console.log(err);
