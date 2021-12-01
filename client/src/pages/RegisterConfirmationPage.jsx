@@ -22,6 +22,7 @@ export default function RegisterConfirmationPage() {
     <Redirect to='/home' />
   ) : (
     <div className='container'>
+	  <h3>Welcome to My Health Records!</h3>
       <p>Click here to confirm your email</p>
       <button onClick={doSubmit}>Confirmation</button>
       {serverError && <Error>{serverError}</Error>}

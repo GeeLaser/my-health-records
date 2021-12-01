@@ -11,5 +11,6 @@ export default function LogoutPage() {
     dispatch(push("/home"));
   }, [dispatch]);
 
-  return <p>Logout in progress</p>;
+  return <p>Logout in progress</p>
+		 <p>Thanks for using My Health Records!</p>;
 }
