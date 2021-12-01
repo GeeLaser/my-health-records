@@ -37,6 +37,15 @@ const FilesList = () => {
     }
   };
 
+  const deleteFile = async (id) => {
+    try {
+      const res = await axios.delete(`${API_URL}/delete/${id}`);
+      console.log(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className="files-container">
       {errorMsg && <p className="errorMsg">{errorMsg}</p>}
@@ -62,7 +71,15 @@ const FilesList = () => {
                         downloadFile(_id, file_path, file_mimetype)
                       }
                     >
-                      Download
+                      Download / 
+                    </a>
+                    <a
+                      href="#/"
+                      onClick={() =>
+                        deleteFile(_id)
+                      }
+                    >
+                      Delete
                     </a>
                   </td>
                 </tr>

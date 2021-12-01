@@ -3,6 +3,7 @@ const express = require('express');
 const multer = require('multer');
 const File = require('../model/file');
 const Router = express.Router();
+const fs = require('fs');
 
 const upload = multer({
   storage: multer.diskStorage({
@@ -77,5 +78,26 @@ Router.get('/download/:id', async (req, res) => {
     res.status(400).send('Error while downloading file. Try again later.');
   }
 });
+
+Router.delete('/delete/:id', async (req, res) => {
+  let file;
+  try {
+    file = await File.findById(req.params.id);
+    await file.remove();
+    fs.unlink('../'+file.file_path, (err) => {
+      if (err) {
+        console.log("failed to delete local image:"+err);
+      } else {
+        console.log('successfully deleted local image');                                
+      }
+    });
+  } catch {
+    if(file == null) {
+      console.log('file is null');
+    } else {
+      console.log("error");
+    }
+  }
+})
 
 module.exports = Router;
