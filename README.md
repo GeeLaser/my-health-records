@@ -5,6 +5,10 @@
   
   The front end of the application is built using the standard trio of HTML, CSS and Javascript. The backend of the application is just EHRbase. Their project can be found here https://github.com/ehrbase/ehrbase Communication between the front end and the back end is handled via a REST api. The api is outlined as part of the openEHR standard. More information on that can be found here https://specifications.openehr.org/releases/ITS-REST/latest
   
+  ### Update Nov 30
+  
+  This project does not use OpenEHR or EHRbase. The project is built using common web frameworks, specifically the MERN stack. See below for more.
+  
   To run this application, add your MongoDB connection details in `server/db/db.js` file.
 
 To install MongoDB on your local machine, follow instructions from [here](https://levelup.gitconnected.com/how-to-install-mongodb-database-on-local-environment-19a8a76f1b92?source=friends_link&sk=416b443bad1f86b292e4b72602cf5c9b).
@@ -23,7 +27,7 @@ Open another terminal and execute the following commands in sequence from inside
 
 and access the application at http://localhost:3030/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and [MERN Authentication](https://github.com/flaviuse/mern-authentication)
 
 ## Available Scripts
 
