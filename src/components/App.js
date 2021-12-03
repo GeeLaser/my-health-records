@@ -3,8 +3,10 @@ import Dropzone from 'react-dropzone';
 import axios from 'axios';
 import { Form, Row, Col, Button } from 'react-bootstrap';
 import { API_URL } from '../utils/constants';
+import Login from '../components/Login/login';
 
 const App = (props) => {
+  
   const [file, setFile] = useState(null); // state for storing actual image
   const [previewSrc, setPreviewSrc] = useState(''); // state for storing previewImage
   const [state, setState] = useState({
@@ -14,7 +16,12 @@ const App = (props) => {
   const [errorMsg, setErrorMsg] = useState('');
   const [isPreviewAvailable, setIsPreviewAvailable] = useState(false); // state to show preview only for images
   const dropRef = useRef(); // React ref for managing the hover state of droppable area
+  const [token, setToken] = useState();
 
+  if(!token) {
+    return <Login setToken={setToken} />
+  }
+  
   const handleInputChange = (event) => {
     setState({
       ...state,
