@@ -24,3 +24,13 @@ Open another terminal and execute the following commands in sequence from inside
 and access the application at http://localhost:3030/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+To view the uploaded file in mongoDB shell, do as following:
+```js
+1. mongo (open a mongo shell)
+2. show dbs (list database)
+3. use <databaseName>  (choose database in use)
+4. show collections  (list collections inside the current database)
+5. db.<collectionName>.find()  (list all records in the collection)
+```
+File is also upload to directory "./server/files" in the project folder.
