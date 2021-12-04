@@ -34,3 +34,7 @@ To view the uploaded file in mongoDB shell, do as following:
 5. db.<collectionName>.find()  (list all records in the collection)
 ```
 File is also upload to directory "./server/files" in the project folder.
+
+Login info: 
+username: user
+password: test123
