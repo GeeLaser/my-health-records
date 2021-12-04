@@ -5,6 +5,7 @@ const File = require('../model/file');
 const Router = express.Router();
 const fs = require('fs');
 
+
 const upload = multer({
   storage: multer.diskStorage({
     destination(req, file, cb) {
@@ -99,6 +100,8 @@ Router.delete('/delete/:id', async (req, res) => {
       console.log("error");
     }
   }
-})
+});
+
+
 
 module.exports = Router;

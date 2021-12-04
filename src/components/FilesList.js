@@ -2,11 +2,14 @@ import React, { useState, useEffect } from 'react';
 import download from 'downloadjs';
 import axios from 'axios';
 import { API_URL } from '../utils/constants';
+import Login from '../components/Login/login';
 
 const FilesList = () => {
   const [filesList, setFilesList] = useState([]);
   const [errorMsg, setErrorMsg] = useState('');
+  const [token, setToken] = useState();
 
+  
   useEffect(() => {
     const getFilesList = async () => {
       try {
@@ -20,6 +23,10 @@ const FilesList = () => {
 
     getFilesList();
   }, []);
+
+  if(!token) {
+    return <Login setToken={setToken} />
+  }
 
   const downloadFile = async (id, path, mimetype) => {
     try {
@@ -100,6 +107,19 @@ const FilesList = () => {
           )}
         </tbody>
       </table>
+      <form action="/upload" method="POST" enctype="multipart/form-data" >
+      <div class="file-field input-field">
+        <div class="btn grey">
+          <span>File</span>
+          <input name="myImage" type="file" multiple="multiple"/> 
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text"/>
+        </div>
+
+      </div>      
+      <button type="submit" class="btn">Submit</button>
+    </form>
     </div>
   );
 };
